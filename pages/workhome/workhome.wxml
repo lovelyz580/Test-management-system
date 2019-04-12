@@ -1,0 +1,311 @@
+<view class="homePage">
+
+  <!-- 公告信息 -->
+  <view class="homeTitle" catchtap='showtext'>
+    <image src="../../images/notice.png"></image>
+    <scroll-view class="containertext">
+      <view class="scrolltxt">
+        <view class="marquee_box">
+          <view class="marquee_text" style="transform: translateX(-{{marqueeDistance}}px)">
+            <text>{{text}}</text>
+            <text style="margin-right:{{marquee_margin}}px;"></text>
+            <text style="margin-right:{{marquee_margin}}px;">{{text}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 轮播图 -->
+  <view class='onPhoto'>
+    <view class='underPhoto'>
+      <!-- 轮播图底色  -->
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{imageslist}}">
+        <swiper-item>
+          <image src="{{url}}{{item.imageurl}}" class="slide-image" width="100%" height="150" bindtap='detail' data-id="{{item.imageid}}" data-detail='{{item.imageother1}}' />
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+
+  <!-- 维修工显示的内容 -->
+  <view wx:if="{{showsataic=='WX'}}">
+    <view class='row'>
+      <!-- 维修项目 -->
+      <view class='col-1 pink'>
+        <text>维修项目</text>
+      </view>
+      <!-- 维修项目列表 -->
+      <view class='col-9'>
+        <text class='more' bindtap='moreorderwx'>更多</text>
+        <view class='homeContent'>
+          <!-- 维修项目列表 -->
+          <view class='OrderList' wx:for="{{WXorderlist}}" bindtap='orderdetail' data-id="{{item.orderid}}" data-orderprojecttype="{{item.orderprojecttype}}" data-ordertype="{{item.ordertype}}">
+            <view class='ListLeft'>
+              <image src='/images/xiu.png'></image>
+            </view>
+            <view class='ListRight'>
+              <text>  {{item.orderprojectname}}维修项目招标
+              <text class="bidding" wx:if='{{item.snatchOrNo=="GQ"}}'>已过期</text>
+              <text class="bidding" wx:if='{{item.snatchOrNo=="YWC"}}'>已完成</text>
+              <text class="biddings" wx:if='{{item.snatchOrNo=="NO"}}'>可竞标</text>
+              <text class="bidding" wx:if='{{item.snatchOrNo=="YES"}}'>已竞标</text>
+              </text>
+              <text> 项目地址：  {{item.orderaddress}}</text>
+              <text> 维修时间:{{item.orderbiddingendtime}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 安装项目列表 -->
+
+    <view class='row'>
+      <view class='col-1 green'>
+        <text>安装项目</text>
+      </view>
+      <!-- 安装项目列表 -->
+      <view class='col-9'>
+        <text class='more' bindtap='moreorderaz'>更多</text>
+        <view class='homeContent'>
+          <!-- 安装项目列表 -->
+          <view class='OrderList' wx:for="{{AZorderlist}}" bindtap='orderdetail' data-id="{{item.orderid}}" data-ordertype="{{item.ordertype}}" data-orderprojecttype="{{item.orderprojecttype}}">
+            <view class='ListLeft'>
+              <image src='/images/zhuang.png'></image>
+            </view>
+            <view class='ListRight'>
+              <text class="bidding" wx:if='{{item.snatchOrNo=="GQ"}}'>已过期</text>
+              <text class="biddings" wx:if='{{item.snatchOrNo=="NO"}}'>可竞标</text>
+              <text class="bidding" wx:if='{{item.snatchOrNo=="YES"}}'>已竞标</text>
+              <text> {{item.orderprojectname}}安装项目招标</text>
+              <text> 项目地址：  {{item.orderaddress}}</text>
+              <text> 安装时间:{{item.orderbiddingendtime}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 经验分享列表 -->
+    <view class='row'>
+      <view class='col-1 pink'>
+        <text>经验分享</text>
+      </view>
+      <!-- 经验分享列表 -->
+      <view class='col-9'>
+        <text class='more' bindtap='moreexperience'>更多</text>
+        <view class='homeContent'>
+          <!-- 经验分享列表 -->
+          <view class='OrderList' wx:for="{{experiencelist}}" bindtap='videoplay' data-id='{{item.sharevideoid}}'>
+            <view class='ListLeft'>
+              <image src='/images/fen.png'></image>
+            </view>
+            <view class='ListRight'>
+              <text wx:if="{{item.sharevideotype=='WX'}}"> 类型：  维修</text>
+              <text wx:if="{{item.sharevideotype=='AZ'}}"> 类型：  安装</text>
+              <text> 分享时间:{{item.sharevideocreatetime}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 维修工显示的内容 -->
+  <!-- 客户显示的内容 -->
+  <view wx:if="{{showsataic=='KH'}}">
+    <!-- 功能区域 -->
+    <view class='row'>
+      <view class='col-1 blue'>
+        <text class="titleleft">功能区域</text>
+      </view>
+      <view class='col-9'>
+        <text class='more'>更多</text>
+        <view class='homeweixiuContent'>
+          <view class='imagesList'>
+            <view class='imagesone' bindtap='findwx'>
+              <image src='/images/timg1.png'></image>
+              <text>安装/维修</text>
+            </view>
+            <view class='imagesone' bindtap='findjcp'>
+              <image src='/images/timg2.png'></image>
+              <text>不打卡上班</text>
+            </view>
+            <view class='imagesone' bindtap='findzx'>
+              <image src='/images/timg3.png'></image>
+              <text>其他服务</text>
+            </view>
+            <view class='imagesone' bindtap='partnernews'>
+              <image src='/images/timg4.png'></image>
+              <text>招募合作人</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 安装师傅 -->
+    <view class='row'>
+      <view class='col-1 green'>
+        <text class="titleleft">星级队伍</text>
+      </view>
+      <view class='col-9'>
+        <text class='more' bindtap='morerepairmenaz'>更多</text>
+        <view class='homeshifuContent'>
+          <view class='WXworkerList'>
+            <image src='/images/repairman.png'></image>
+            <image src='/images/repairman.png'></image>
+            <image src='/images/repairman.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 维修师傅 -->
+    <view class='row'>
+      <view class='col-1 pink'>
+        <text class="titleleft">星级师傅</text>
+      </view>
+      <view class='col-9'>
+        <text class='more' bindtap='morerepairmenwx'>更多</text>
+        <view class='homeshifuContent'>
+          <view class='WXworkerList'>
+            <image src='/images/repairman.png'></image>
+            <image src='/images/repairman.png'></image>
+            <image src='/images/repairman.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 其他产品 -->
+    <view class='row'>
+      <view class='col-1 blue'>
+        <text class="titleleft">其他产品</text>
+      </view>
+      <view class='col-9'>
+        <text class='more'>更多</text>
+        <view class='homeContent'>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 客户显示的内容 -->
+
+  <!-- 公共显示内容 -->
+  <view wx:if="{{showsataic=='YK'}}">
+    <!-- 项目处理信息 -->
+    <view class='row'>
+      <view class='col-1 pink'>
+        <text>项目处理信息</text>
+      </view>
+      <view class='col-9'>
+        <text class='more' bindtap='moreorder'>更多</text>
+        <!-- <swiper class="homexinxiContent" style='background:{{bgColor}};' vertical="false" autoplay="false" circular="false" display-multiple-items='5'>
+          <!-- vertical="true" autoplay="true" circular="true" interval="1500"  
+          <block wx:for-index="idx" wx:for='{{orderlist}}'>
+            <swiper-item class="listone">
+              <view data-ordertype="{{item.ordertype}}" data-orderid="{{item.orderid}}" bindtap="orderdetails">
+                <view class='projectname'>{{item.orderprojectname}}</view>
+                <view class='time'>{{item.ordercreatetime}}</view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper> -->
+        <view class="homexinxiContent" style='background:{{bgColor}};'>
+          <block wx:for-index="idx" wx:for='{{orderlist}}'>
+            <view class="listone">
+              <view data-ordertype="{{item.ordertype}}" data-orderid="{{item.orderid}}" bindtap="orderdetails">
+                <view class='projectname'>{{item.orderprojectname}}</view>
+                <view class='time'>{{item.ordercreatetime}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <!-- 功能区域 -->
+    <view class='row'>
+      <view class='col-1 blue5'>
+        <text>功能区域</text>
+      </view>
+      <view class='col-9'>
+        <text class='more'>更多</text>
+        <view class='homeweixiuContent'>
+          <view class='imagesList'>
+            <view class='imagesone' bindtap='findwx'>
+              <image src='/images/timg1.png'></image>
+              <text>安装/维修</text>
+            </view>
+            <view class='imagesone' bindtap='findaz'>
+              <image src='/images/timg2.png'></image>
+              <text>不打卡上班</text>
+            </view>
+             <view class='imagesone' bindtap='findzx'>
+              <image src='/images/timg4.png'></image>
+              <text>其他服务</text>
+            </view>
+            <view class='imagesone' bindtap='partnernews'>
+              <image src='/images/timg3.png'></image>
+              <text>招募合作人</text>
+            </view>
+           
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 安装师傅 -->
+    <view class='row'>
+      <view class='col-1 green'>
+        <text class="titleleft">星级队伍</text>
+      </view>
+      <view class='col-9'>
+        <text class='more' bindtap='morerepairmenaz'>更多</text>
+        <view class='homeshifuContent'>
+          <view class='WXworkerList'>
+            <image src='/images/repairman.png'></image>
+            <image src='/images/repairman.png'></image>
+            <image src='/images/repairman.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 维修师傅 -->
+    <view class='row'>
+      <view class='col-1 pink'>
+        <text class="titleleft">星级师傅</text>
+      </view>
+      <view class='col-9'>
+        <text class='more' bindtap='morerepairmenwx'>更多</text>
+        <view class='homeshifuContent'>
+          <view class='WXworkerList'>
+            <image src='/images/repairman.png'></image>
+            <image src='/images/repairman.png'></image>
+            <image src='/images/repairman.png'></image>
+
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 其他产品 -->
+    <view class='row'>
+      <view class='col-1 blue'>
+        <text class="titleleft">其他产品</text>
+      </view>
+      <view class='col-9'>
+        <text class='more'>更多</text>
+        <view class='homeContent'>
+          <!-- <swiper class="homexinxiContent" style='background:{{bgColor}};' vertical="false" autoplay="false" circular="false" display-multiple-items='5'>
+            <!-- vertical="true" autoplay="true" circular="true" interval="1500"  
+            <block wx:for-index="idx" wx:for='{{orderlist}}'>
+              <swiper-item class="listone">
+                <view data-ordertype="{{item.ordertype}}" data-orderid="{{item.orderid}}" bindtap="orderdetails">
+                  <view class='projectname'>{{item.orderprojectname}}</view>
+                  <view class='time' style='font-size:20rpx; line-height:400%'>{{item.ordercreatetime}}</view>
+                </view>
+              </swiper-item>
+            </block>
+          </swiper> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

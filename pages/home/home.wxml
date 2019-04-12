@@ -1,0 +1,147 @@
+<!--pages/home/home.wxml-->
+<view class="homePage">
+  <view class="homeTitle" catchtap='showtext'>
+    <image src="../../images/notice.png"></image>
+    <scroll-view class="containertext">
+      <view class="scrolltxt">
+        <view class="marquee_box">
+          <view class="marquee_text" style="transform: translateX(-{{marqueeDistance}}px)">
+            <text>{{text}}</text>
+            <text style="margin-right:{{marquee_margin}}px;"></text>
+            <text style="margin-right:{{marquee_margin}}px;">{{text}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>
+  <view class="homeContent" style="display:{{twoStatus}}">
+    <view class="swiper-tab">
+      <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">维修工主页</view>
+      <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">安装队主页</view>
+    </view>
+
+    <view current="{{currentTab}}" duration="300" bindchange="swiperTab">
+      <view class='page_row'>
+        <view class="search">
+          <view class="df search_arr">
+            <icon class="searchcion" size='20' type='search'></icon>
+            <input class=""  bindblur='searchValueInput' placeholder="请输入关键字" value="{{searchValue}}" />
+          </view>
+        </view>
+
+
+        <form bindsubmit="suo" report-submit="true">
+          <view class='sousuo'>
+            <button formType="submit" class="buttonss">
+              搜索
+            </button>
+          </view>
+        </form>
+      </view>
+      <view class="contentList">
+        <view class="list" wx:for="{{wxArray}}" wx:key data-id="{{item.orderid}}" data-ordertype="{{ordertype}}" bindtap="userListDetail" form-type="submit">
+          <view class="listTop">
+            <view>{{item.orderprojectname}} {{item.buildingtypename}}</view>
+            <!-- <text>￥{{item.orderintercepttotalmoney}}</text> -->
+          </view>
+          <view class="listAdress">{{item.orderaddress}}</view>
+          <view class="people" wx:if='{{item.ordertype=="QD"}}'>
+            <view>竞标人数：
+              <text>{{item.snatchcount}}</text>
+            </view>
+
+            <text class="bidding" wx:if='{{item.overdue=="YGQ"}}'>已过期</text>
+            <text class="bidding" wx:if='{{item.snatchOrNo=="NO"}}'>竞标</text>
+            <text class="biddings" wx:if='{{item.snatchOrNo=="YES"}}'>已竞标</text>
+          </view>
+          <view class="listBot">{{item.ordercreatetime}}</view>
+        </view>
+
+      </view>
+
+    </view>
+    <form bindsubmit="patternTab" report-submit='true'>
+      <button class="patternTab" form-type='submit'>{{tabText}}</button>
+    </form>
+  </view>
+  <view class="homeContent" style="display:{{oneStatus}}">
+    <view class='page_row'>
+      <view class="search">
+        <view class="df search_arr">
+          <icon class="searchcion" size='20' type='search'></icon>
+          <input class="" placeholder="请输入关键字" value="{{searchValue}}"  bindblur='searchValueInput' />
+        </view>
+      </view>
+
+      <form bindsubmit="suo" report-submit="true">
+        <view class='sousuo'>
+
+          <button formType="submit" class="buttonss">
+            搜索
+          </button>
+        </view>
+
+      </form>
+    </view>
+    <view class="contentList">
+      <view class="list" wx:for="{{oneArray}}" wx:key data-id="{{item.orderid}}" data-ordertype="{{ordertype}}" bindtap="userListDetail" form-type="submit">
+        <view class="listTop">
+          <view>{{item.orderprojectname}} {{item.buildingtypename}}</view>
+          <!-- <text>￥{{item.orderintercepttotalmoney}}</text> -->
+        </view>
+        <view class="listAdress">{{item.orderaddress}}</view>
+        <view class="people" wx:if='{{item.ordertype=="QD"}}'>
+          <view>项目类型：
+            <text wx:if="{{item.orderprojecttype=='WX'}}">维修</text>
+            <text wx:if="{{item.orderprojecttype=='AZ'}}">安装</text>
+          </view>
+          <text class="biddings" wx:if='{{item.snatchOrNo=="GQ"}}'>已过期</text>
+          <text class="bidding" wx:if='{{item.snatchOrNo=="NO"}}'>竞标</text>
+          <text class="biddings" wx:if='{{item.snatchOrNo=="YES"}}'>已竞标</text>
+        </view>
+        <view class="listBot">{{item.ordercreatetime}}</view>
+      </view>
+    </view>
+    <form bindsubmit="patternTab" report-submit='true'>
+      <button class="patternTab" form-type='submit'>{{tabText}}</button>
+    </form>
+  </view>
+  <view class="homeContent" style="display:{{userStatus}}">
+    <view class='page_row'>
+      <view class="search">
+        <view class="df search_arr">
+          <icon class="searchcion" size='20' type='search'></icon>
+          <input class=""  bindblur='searchValueInput' placeholder="请输入关键字" value="{{searchValue}}" />
+        </view>
+      </view>
+      <form bindsubmit="suo" report-submit="true">
+        <view class='sousuo'>
+          <button formType="submit" class="buttonss">
+            搜索
+          </button>
+        </view>
+      </form>
+    </view>
+    <view class="contentList">
+      <view class="list" wx:for="{{userArray}}" wx:key data-id="{{item.orderid}}" bindtap="userListDetail" form-type="submit">
+        <view class="listTop">
+          <view>{{item.orderprojectname}} {{item.buildingtypename}}</view>
+        </view>
+        <view class="listAdress">{{item.orderaddress}}</view>
+        <view class="people" wx:if='{{item.ordertype=="QD"}}'>
+          <view>竞标人数：
+            <text>{{item.snatchcount}}</text>
+          </view>
+          <text class="bidding" catchtap="bidding" data-index="{{index}}" wx:if="{{userrole!='KH,'}}">竞标{{ordertype}}</text>
+        </view>
+        <view class="listBot">{{item.ordercreatetime}}</view>
+      </view>
+    </view>
+    <view class="btns">
+      <form bindsubmit="myRepair" report-submit='true'>
+        <button class="myRepair" form-type="submit" disabled="{{onclick}}">需求发布</button>
+      </form>
+    </view>
+  </view>
+</view>

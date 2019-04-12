@@ -1,0 +1,20 @@
+<!--pages/priceEdit/priceEdit.wxml-->
+<view class="priceEditPage">
+  <form>
+    <view class="editInfo">
+      <view class="info">
+        <text>产品类型</text>
+        <view>{{goodsname}}</view>
+      </view>
+      <view class="info">
+        <text>清单项目</text>
+        <view>{{projectname}}</view>
+      </view>
+      <view class="info">
+        <text>单价</text>
+        <input placeholder='请输入单价' bindinput="getPrice" value='{{pricemoney}}'></input>
+      </view>
+    </view>
+    <button class="submitBtn" bindtap="submitBtn">提交</button>
+  </form>
+</view>

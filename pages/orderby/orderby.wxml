@@ -1,0 +1,30 @@
+<!--pages/orderby/orderby.wxml-->
+<view class='on'>
+  <radio-group class="taskList" wx:for="{{orderList}}" data-index='{{index}}' bindtap='choese' style='{{choseone==index?"color:red ;":""}} z-index:999; {{item.snatchstate=="Y"?"border: 1rpx solid red ; ":""}}' data-id="{{item.orderid}}" data-serviceuserid='{{item.serviceuserid}}'>
+    <label class="radio">
+      <radio value="{{item.name}}" checked="{{choseone==index?true:false}}" />
+      <view class="contentList">
+        <view class="list">
+          <text class='listname'>姓名：{{color}}{{item.serviceuser_userrealname}} </text>
+          <text class='listname'></text>
+          <text>信誉值：</text>
+          <text style='margin-right:20rpx;'>{{item.serviceuser_usercredit}}   </text>
+          <text>价格：</text>
+          <text>{{item.snatchmoney+item.snatchtravelmoney}}</text>
+        </view>
+      </view>
+    </label>
+  </radio-group>
+  <!-- <view class="btns">
+    <form bindsubmit="Btnoff" report-submit='true'>
+      <button class='myRepair' form-type='submit' disabled="{{onclick}}" style='margin-bottom:20px'>取消</button>
+    </form>
+    <form bindsubmit="buttonBtn" report-submit='true'>
+      <button class='myRepairl'  form-type='submit' disabled="true">确定</button>
+    </form>
+  </view> -->
+  <!-- <view class="btns" wx:if='{{calibration}}'>
+    <button class='calibration' style='margin-bottom:20px'>此单已流标</button>
+
+  </view> -->
+</view>

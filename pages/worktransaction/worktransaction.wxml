@@ -1,0 +1,15 @@
+<!--pages/transaction/transaction.wxml-->
+<view class="myWalletPage">
+  <view class="recordList">
+    <view class="record" wx:for='{{list}}' bindtap='taskListDetail' wx:for-item="list" data-id='{{list.orderid}}'>
+      <view class="recordLeft">
+        <text>{{list.orderprojectname}}</text>
+        <text wx:if="{{list.userserviceincomemoneysource=='XSFK'}}" style="color:#ed1b24;">线上支付</text>
+        <view>{{list.userserviceincomemoneycreatetime}}</view>
+      </view>
+      <view class="pay">
+        {{list.userserviceincomemoney}}
+      </view>
+    </view>
+  </view>
+</view>

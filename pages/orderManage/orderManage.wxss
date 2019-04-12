@@ -1,0 +1,134 @@
+/* pages/orderManage/orderManage.wxss */
+page{
+  background:#f5f5f5;
+}
+.repairTaskPage,.taskList{
+  width:100%;
+}
+.task:first-child{
+  margin-top:0;
+}
+.task{
+  width:100%;
+  background:#fff;
+  border-top:1px solid #f5f5f5;
+  margin-top:20rpx;
+}
+.taskTop{
+  width:100%;
+  box-sizing: border-box;
+  padding:20rpx 30rpx;
+  line-height:50rpx;
+}
+.taskInfo{
+  width:100%;
+  display: flex;
+  align-items: center;
+}
+.taskLeft{
+  display: flex;
+  align-items: center;
+  margin-right:auto;
+}
+.taskLeft text{
+  display: block;
+  font-size:30rpx;
+}
+.status{
+  font-size:30rpx;
+}
+.taskLeft view{
+  font-size:30rpx;
+}
+.taskBot{
+  width:100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding:15rpx 30rpx;
+  border-top:1px solid #f5f5f5;
+}
+.left{
+  margin-right:auto;
+}
+.right{
+  display: flex;
+  align-items:center;
+}
+.right view{
+  font-size:30rpx;
+  width:150rpx;
+  border:1px solid #ed1b24;
+  padding:10rpx 0;
+  color:#ed1b24;
+  text-align: center;
+  border-radius: 10rpx;
+  margin-right:30rpx;
+}
+.right text{
+  display: block;
+  padding:10rpx 45rpx;
+  border:1px solid #888888;
+  border-radius: 10rpx;
+  font-size:30rpx;
+  color:#888888;
+}
+/* 搜索
+ */
+ .sousuo {
+margin-left: 15rpx;
+line-height: 150%;
+text-align: center;
+border: 1px solid #d0d0d0;
+border-radius: 10rpx;
+}
+
+.page_row {
+/* position: fixed; */
+display: flex;
+flex-direction: row;
+width: 100%;
+}
+
+.searchcion {
+margin: 10rpx 10rpx 10rpx 10rpx;
+position: absolute;
+left: 25rpx;
+z-index: 2;
+width: 20px;
+height: 20px;
+text-align: center;
+}
+
+/* 搜索 */
+
+
+.buttonss {
+height: 30px;
+line-height: 30px;
+font-size: 30rpx;
+}
+.page_row {
+/* position:fixed; */
+display:flex;
+flex-direction:row;
+width:100%;
+
+}
+
+.search {width:80%;
+
+}
+.search_arr{
+border: 1rpx solid #d0d0d0
+}
+
+.search_arr input {margin-left:80rpx;
+height:60rpx;
+border-radius:5px;
+font-size:30rpx;
+
+}
+.centents{
+height: 75rpx;
+}

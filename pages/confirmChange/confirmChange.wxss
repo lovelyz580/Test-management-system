@@ -1,0 +1,451 @@
+/* pages/confirmOrder/confirmOrder.wxss */
+
+.confirmOrderPage {
+  width: 100%;
+}
+
+.orderInfo {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  padding-bottom: 40rpx;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 20rpx solid #ddd;
+}
+
+.choose {
+  color: slateblue;
+}
+
+.orderTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 40rpx 0 20rpx 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.orderTitle view {
+  width: 10rpx;
+  background: #ed1b24;
+  height: 40rpx;
+}
+
+.orderTitle text {
+  display: block;
+  font-size: 35rpx;
+  margin-left: 10rpx;
+}
+
+.orderContent {
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  font-size: 30rpx;
+  color: #7a7a7a;
+  margin-top: 15rpx;
+}
+
+.info text {
+  text-align: left;
+}
+
+.productInfo {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.productList {
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.navList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ddd;
+  background: #eee;
+}
+
+.navList text {
+  display: block;
+  font-size: 25rpx;
+  width: 16.6%;
+  text-align: center;
+}
+
+.productContent {
+  width: 100%;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.list:last-child {
+  margin-bottom: 20rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.list text {
+  display: block;
+  width: 16.6%;
+  text-align: center;
+  font-size: 23rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delete {
+  color: #ed1b24;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.footLeft {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+
+.footLeft text {
+  display: block;
+  font-size: 35rpx;
+}
+
+.footLeft  view {
+  font-size: 35rpx;
+  color: #ed1b24;
+}
+
+.footRight {
+  width: 30%;
+  text-align: center;
+  padding: 30rpx 0;
+  font-size: 35rpx;
+  color: #fff;
+}
+
+.allLeft {
+  display: flex;
+  float: left;
+}
+
+.allRight {
+  display: flex;
+  float: right;
+}
+
+.allLeft text {
+  display: block;
+  font-size: 30rpx;
+}
+
+.allLeft view {
+  font-size: 30rpx;
+}
+
+.allRight {
+  display: flex;
+  float: right;
+}
+
+.allRight text {
+  display: block;
+  font-size: 30rpx;
+}
+
+.allRight view {
+  font-size: 30rpx;
+}
+
+/* 评价 */
+
+.productevaluate {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.startList {
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #f5f5f5;
+  padding: 20rpx 0;
+}
+
+image {
+  width: 100%;
+  height: 500rpx;
+}
+
+.start {
+  height: 60rpx;
+  width: 60rpx;
+  display: inline-block;
+}
+
+.start text {
+  display: block;
+  font-size: 30rpx;
+  color: #555;
+}
+
+.start view {
+  display: flex;
+  align-items: center;
+}
+
+.start view image {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 40rpx;
+}
+
+.listtext text {
+  display: block;
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 填写产品详情 */
+
+page {
+  background: #f5f5f5;
+}
+
+.publishRepairPage {
+  margin-top: 95rpx;
+  width: 100%;
+  padding-bottom: 30rpx;
+}
+
+.priceEditPage {
+  width: 100%;
+}
+
+.editInfo {
+  width: 100%;
+  /* background: #fff; */
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  border-top: 1px solid #f5f5f5;
+}
+
+.orderTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+
+.orderTitle view {
+  width: 10rpx;
+  background: #ed1b24;
+  height: 40rpx;
+}
+
+.orderTitle text {
+  display: block;
+  font-size: 35rpx;
+  margin-left: 10rpx;
+}
+
+.info:nth-child(5) {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.info1 {
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+
+.info image {
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.infoLeft {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx 30rpx 0;
+}
+
+.picker view {
+  margin-right: auto;
+}
+
+.infoLeft text {
+  display: block;
+  font-size: 30rpx;
+  width: 28%;
+}
+
+.infoLeft picker {
+  width: 75%;
+  font-size: 30rpx;
+}
+
+.infoLeft input {
+  display: block;
+  width: 75%;
+  font-size: 30rpx;
+}
+
+.productList {
+  width: 100%;
+  background: #fff;
+  margin-top: 50rpx;
+}
+
+.navList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eee;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+}
+
+.navList text {
+  display: block;
+  font-size: 25rpx;
+  width: 16.6%;
+  text-align: center;
+}
+
+.productContent {
+  width: 100%;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 30rpx 0;
+}
+
+.list text {
+  display: block;
+  width: 16.6%;
+  text-align: center;
+  font-size: 23rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delete {
+  color: #ed1b24;
+}
+
+.addBtn {
+  width: 95%;
+  background: none;
+  font-size: 30rpx;
+  color: #ed1b24;
+  outline: none;
+  border: 1px solid #ed1b24;
+  margin-top: 50rpx;
+}
+
+.submitBtn {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+  background: #ed1b24;
+  margin-top: 70rpx;
+  color: #fff;
+  outline: none;
+  font-size: 30rpx;
+}
+
+/* 附件图片 */
+
+.content {
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.contentchange {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+
+.editInfo {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  padding-bottom: 40rpx;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 20rpx solid #ddd;
+}
+
+.accimages {
+  width: 240rpx;
+  height: 190rpx;
+  margin-left: 25%;
+}
+
+/* 输入框 */
+
+.text {
+  text-align: center;
+  font-size: 23rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 1rpx solid #ddd;
+}

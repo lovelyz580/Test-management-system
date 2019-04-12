@@ -1,0 +1,8 @@
+/* pages/pricemanagement/pricemanagement.wxss */
+.info{
+  height: 100rpx;
+  width: 100%;
+}
+.price{
+  border: 1rpx silver solid;
+}

@@ -1,0 +1,42 @@
+/* pages/priceEdit/priceEdit.wxss */
+page{
+  background:#f5f5f5;
+}
+.priceEditPage{
+  width:100%;
+}
+.editInfo{
+  width:100%;
+  background:#fff;
+}
+.info{
+  width:100%;
+  display: flex;
+  align-items:center;
+  box-sizing: border-box;
+  padding:30rpx;
+  border-top:1px solid #f5f5f5;
+}
+.info text{
+  display: block;
+  font-size:30rpx;
+  width:25%;
+}
+.info view{
+  font-size:30rpx;
+}
+.info input{
+  display: block;
+  width:75%;  
+  font-size:30rpx;
+}
+.submitBtn{
+  display: block;
+  width:95%;
+  margin:0 auto;
+  background:#ed1b24;
+  margin-top:70rpx;
+  color:#fff;
+  outline: none;
+  font-size:30rpx;
+}

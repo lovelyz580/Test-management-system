@@ -1,0 +1,70 @@
+<!--pages/robbingUserCollect/robbingUserCollect.wxml-->
+<view class="confirmOrderPage">
+  <view class="orderInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>订单信息</text>
+    </view>
+    <view class="orderContent">
+      <view class="info">
+        <text>订单编号：</text>
+        <view>{{orderid}}</view>
+      </view>
+      <view class="info">
+        <text>项目名称：</text>
+        <view>{{orderprojectname}}</view>
+      </view>
+      <view class="info" style='color:red;'>
+        <text>金额：</text>
+        <view >{{customermoney}}元</view>
+      </view>
+    </view>
+  </view>
+  <view class="productInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>线下转账信息</text>
+    </view>
+    <view class="productList">
+      <view class="info">
+        <text>支付方式：</text>
+        <view>公司转账</view>
+      </view>
+      <view class="info">
+        <text>户名：</text>
+        <view>九华公司</view>
+      </view>
+      <view class="info">
+        <text>账户：</text>
+        <view>6271002289997626194</view>
+      </view>
+      <view class="info">
+        <text>开户行：</text>
+        <view>北京市北京支行</view>
+      </view>
+      <view class="info">
+        <text>银联号：</text>
+        <view>31380</view>
+      </view>
+      <view class="info">
+        <text>汇付识别码：</text>
+        <view>{{code}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="orderContent">
+    <view class="info">
+    </view>
+  </view>
+  <view class="orderContent">
+    <view class="info">
+      <text>配送方式：</text>
+      <view>快递</view>
+    </view>
+    <view class="info">
+      <text>发票类型：</text>
+      <view>不开发票</view>
+    </view>
+  </view>
+  <button class="myRepairl button-hover" bindtap='Btn'>完成</button>
+</view>

@@ -1,0 +1,57 @@
+/* pages/workerEvaluate/workerEvaluate.wxss */
+page{
+  background:#f5f5f5;
+}
+.workerEvaluatePage{
+  width:100%;
+}
+
+.startList{
+  width:100%;
+  background:#fff;
+  border-top:1px solid #f5f5f5;
+  padding:20rpx 0;
+}
+image {
+  width: 100%;
+  height: 500rpx;
+}
+.start{
+  height: 60rpx;
+  width: 60rpx;
+  display: inline-block
+}
+.start text{
+  display: block;
+  font-size:30rpx;
+  color:#555;
+}
+.start view{
+  display: flex;
+  align-items: center;
+}
+.start view image{
+  display: block;
+  width:40rpx;
+  height:40rpx;
+  margin-left:40rpx;
+}
+.opinion{
+  display: block;
+  width:100%;
+  background:#fff;
+  margin-top:20rpx;
+  box-sizing: border-box;
+  padding:30rpx;
+  font-size:30rpx;
+}
+.submitBtn{
+  display: block;
+  width:95%;
+  margin:0 auto;
+  background:#ed1b24;
+  margin-top:70rpx;
+  color:#fff;
+  outline: none;
+  font-size:30rpx;
+}

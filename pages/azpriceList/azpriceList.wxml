@@ -1,0 +1,46 @@
+<!--pages/azpriceList/azpriceList.wxml-->
+<!--pages/priceMaintain/priceMaintain.wxml-->
+<view class="priceMaintainPage">
+<view>
+<button bindtap='addprice'>添加</button>
+
+
+</view>
+  <view class="productPrice" style="margin-top:0" wx:for="{{priceList}}" data-index="{{index}}" wx:key bindtap='alertPrice' data-id='{{item.priceid}}'>
+    <view class="productLeft">
+        <view class="productName">
+        <text>地区:</text>
+        <text>{{item.priceareaprovincename}}{{item.priceareaname}}</text>
+      </view>
+          <view class="productName">
+        <text>建筑类型:</text>
+        <text>{{item.pricebuildingtypename}}</text>
+      </view>
+      <view class="productName">
+        <text>地产公司:</text>
+        <text>{{item.pricepropertycompanyname}}</text>
+     
+      </view>
+      <view class="productName">
+        <text>清单项目:</text>
+        <text>{{item.projectname}}</text>
+           <view>生效</view>
+      </view>
+      <view class="priceMoney">
+        <text>清单报价:</text>
+        <text> </text>
+       <text>{{item.pricemoney}}</text>
+      </view>
+    </view>
+    <image src="../../images/right.png"></image>
+  </view>
+</view>
+<!-- <view class="btns">
+  <form bindsubmit="Btnoff" report-submit="true">
+    <button class='myRepair' formType="submit" style='margin-bottom:20px'>取消</button>
+  </form>
+
+  <form bindsubmit="buttonBtn" report-submit="true">
+    <button class='myRepairl' formType="submit">提交</button>
+  </form>
+</view> -->

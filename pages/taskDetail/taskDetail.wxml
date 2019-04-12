@@ -1,0 +1,131 @@
+
+<view class="confirmOrderPage">
+  <view class="orderInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>订单信息</text>
+    </view>
+    <view class="orderContent">
+      <view class="info">
+        <text>项目名称：</text>
+        <view>{{orderprojectname}}</view>
+      </view>
+      <view class="info">
+        <text>维修地点：</text>
+        <view>{{orderaddress}}
+          <view bindtap='chooseLocation' class='choose'>（点击查看导航）
+          </view>
+        </view>
+      </view>
+      <view class="info">
+        <text>联系人：</text>
+        <view>{{ordercontactperson}}</view>
+      </view>
+      <view class="info">
+        <text>联系电话：</text>
+        <view>{{ordercontactphone}}</view>
+      </view>
+      <view class="info" wx:if='{{ordertype=="QD"}}'>
+        <text>竞标截止时间：</text>
+        <view>{{orderbiddingendtime}}</view>
+      </view>
+      <view class="info">
+        <text>计划维修时间：</text>
+        <view>{{orderplantime}}</view>
+      </view>
+      <view class="info">
+        <text>建筑类型：</text>
+        <view>{{buildingtypename}}</view>
+      </view>
+      <view class="info">
+        <text>项目类型：</text>
+        <view wx:if="{{orderprojecttype=='WX'}}">维修</view>
+        <view wx:if="{{orderprojecttype=='AZ'}}">安装</view>
+      </view>
+    </view>
+  </view>
+  <view class="productInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>产品信息</text>
+    </view>
+    <view class="productList">
+      <view class="navList">
+        <text>产品类型</text>
+        <text>清单项目</text>
+        <text wx:if="{{orderprojecttype=='AZ'}}">单价</text>
+        <text>数量</text>
+        <text wx:if="{{orderprojecttype=='AZ'}}">价格</text>
+      </view>
+      <view class="productContent">
+        <view class="list" wx:for="{{orderList}}" wx:key>
+          <text>{{item.goodsname}}</text>
+          <text>{{item.projectname}}</text>
+          <text wx:if="{{orderprojecttype=='AZ'}}">{{item.orderpricemoney}}</text>
+          <text>{{item.orderdetailnumber}}</text>
+          <text wx:if="{{orderprojecttype=='AZ'}}">{{item.orderdetailpricetotalmoney}}</text>
+        </view>
+
+        <view class="allMoney">
+          <view class="allLeft">
+            <text>差旅费：</text>
+            <view>{{ordertraveltotalmoney}}</view>
+          </view>
+          <view class="allRight">
+            <text>合计：</text>
+            <view>{{orderintercepttotalmoney}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 报价信息 -->
+  <view class="productInfo" wx:if="{{orderprojecttype=='WX'}}">
+    <view class="orderTitle">
+      <view></view>
+      <text>报价信息</text>
+    </view>
+    <view class="orderContent">
+      <view class="infotest">
+        <text>日工资：</text>
+        <input type='number' bindblur='dayrate' placeholder='请输入日工资' value='{{dayrate}}'>{{dayrate}}</input>
+      </view>
+      <view class="infotest">
+        <text>人数：</text>
+        <input type='number' bindblur='people' placeholder='请输入需要的人数' value='{{people}}'>{{people}}</input>
+      </view>
+      <view class="infotest">
+        <text>天数：</text>
+        <input type='number' bindblur='daysnumber' placeholder='请输入需要的天数' value='{{daysnumber}}'>{{daysnumber}}</input>
+      </view>
+      <view class="infotest">
+        <text>材料费：</text>
+        <input type='number' bindblur='materialsexpenses' placeholder='请输入材料费' value='{{materialsexpenses}}'>{{materialsexpenses}}</input>
+      </view>
+    </view>
+  </view>
+  <!-- 协议 -->
+      <!-- <view class='container-agreement'>
+      <checkbox-group bindchange="agreeMent" class="agreementinfo">
+        <checkbox value='{{agreeMent}}'  checked="{{agreeMent}}"/> 我同意此
+        <text class="user-agree" catchtap="showAgreement">《施工协议》</text>
+      </checkbox-group>
+    </view>
+  <!-- 操作 -->
+  <!-- <view class="footer">
+    <form bindsubmit="leafletsBtn" report-submit='true'>
+      <button class="footLeft" form-type='submit' style="background:{{releaseBg}}">
+        取消接单
+      </button>
+    </form>
+
+    <form bindsubmit="configOrder" report-submit='true'>
+      <button class="footRight" form-type='submit' style="background:{{releaseBg}}">
+        确认接单
+      </button>
+    </form>
+
+  </view> -->
+  
+  
+</view>

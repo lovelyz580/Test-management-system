@@ -1,0 +1,25 @@
+<!--pages/putForward/putForward.wxml-->
+<view class="putForwardPage">
+  <form>
+    <view class="putForwardInfo">
+      <view class="money">
+        <text>金额</text>
+        <input type="number" placeholder='可提现金额{{allMoney}}元' value="{{money}}" bindinput="getMoney"></input>
+        <view bindtap="allPut">全部提现</view>
+      </view>
+      <view class="info">
+        <text>姓名</text>
+        <input type="text" placeholder='请输入姓名' bindinput="getName"></input>
+      </view>
+      <view class="info">
+        <text>银行卡号</text>
+        <input type="number" placeholder='请输入银行卡号' bindinput="getIdNumber"></input>
+      </view>
+      <view class="info">
+        <text>开户行</text>
+        <input type="text" placeholder='请输入开户行' bindinput="getOpenBank"></input>
+      </view>
+    </view>
+    <button class="putForwardBtn" bindtap="putForwardBtn">提现</button>
+  </form>
+</view>

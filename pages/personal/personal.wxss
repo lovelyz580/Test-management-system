@@ -1,0 +1,70 @@
+/* pages/personal/personal.wxss */
+.personalPage{
+  width:100%;
+}
+.personalInfo{
+  border-top:1px solid #f5f5f5;
+  width:100%;
+  box-sizing: border-box;
+  padding:50rpx 30rpx;
+  line-height: 50rpx;
+  border-bottom:1px solid #f5f5f5;
+  color:#333;
+}
+.moneys{
+ width:150rpx;
+
+}
+.personalName{
+  width:100%;
+  font-size:32rpx;
+}
+.personalInfo text{
+  display: block;
+  font-size:30rpx;
+}
+.money{
+  width:100%;
+  display: flex;
+  align-items: center;
+  font-size:30rpx;
+}
+.personalList{
+  width:100%;
+}
+.list{
+  width:100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding:20rpx 30rpx;
+  border-bottom:1px solid #f5f5f5;
+}
+.list view{
+  display: flex;
+  align-items: center;
+  margin-right:auto;
+}
+.list view image{
+  display: block;
+  width:50rpx;
+  height:50rpx;
+}
+.list view text{
+  display:block;
+  font-size:30rpx;
+  color:#555;
+  margin-left:20rpx;
+}
+.listRight{
+  display: block;
+  width:30rpx;
+  height:30rpx
+}
+.receipt{
+  width:80%;
+  font-size:30rpx;
+  margin-top:50rpx;
+  background:#ed1b24;
+  color:#fff;
+}

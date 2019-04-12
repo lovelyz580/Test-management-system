@@ -1,0 +1,34 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="containers">
+    <scroll-view class='sv' scroll-y='true' style='height:530px;'>
+      <view class="infoRegions">
+        <checkbox-group name="city" bindchange="itemSelected">
+          <view wx:for="{{citys}}" wx:key="id" class='style{{index}}'>
+            <view class='style{{index}}' data-index='{{index}}'>
+              <checkbox value="{{item.areaprovincecode}}" checked="{{item.checked}}" />{{item.areaprovince}}
+            </view>
+            <view wx:for="{{item.areaCityList}}" wx:for-item="citys">
+              <view class="checkbox">
+                <checkbox value="{{citys.areaprovincecode}}" checked="{{citys.checked}}" />{{citys.areaprovince}}
+              </view>
+            </view>
+            <view class='clear'></view>
+          </view>
+        </checkbox-group>
+      </view>
+    </scroll-view>
+    <view class="footer">
+      <view class="footLeft">
+      </view>
+      <button class="footRight" formType="reset" style="background:#ccc">
+        取消
+      </button>
+      <button class="footRight" formType="submit" style="background:#ed1b24">
+        确认
+      </button>
+
+    </view>
+
+  </view>
+
+</form>

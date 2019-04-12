@@ -1,0 +1,183 @@
+/* pages/azpricealt/azpricealt.wxss */
+page {
+  background: #f5f5f5;
+}
+
+.publishRepairPage {
+  width: 100%;
+  padding-bottom: 30rpx;
+}
+
+.priceEditPage {
+  width: 100%;
+}
+
+.editInfo {
+  width: 100%;
+  background: #fff;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  border-top: 1px solid #f5f5f5;
+}
+
+.orderTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+
+.orderTitle view {
+  width: 10rpx;
+  background: #ed1b24;
+  height: 40rpx;
+}
+
+.orderTitle text {
+  display: block;
+  font-size: 35rpx;
+  margin-left: 10rpx;
+}
+
+.info:nth-child(5) {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.info1 {
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+
+.info image {
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.infoLeft {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx 30rpx 0;
+}
+
+.picker view {
+  margin-right: auto;
+}
+
+.infoLeft text {
+  display: block;
+  font-size: 30rpx;
+  width: 28%;
+}
+
+.infoLeft picker {
+  width: 75%;
+  font-size: 30rpx;
+}
+
+.infoLeft input {
+  display: block;
+  width: 75%;
+  font-size: 30rpx;
+}
+
+.productList {
+  width: 100%;
+  background: #fff;
+  margin-top: 50rpx;
+}
+
+.navList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eee;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+}
+
+.navList text {
+  display: block;
+  font-size: 25rpx;
+  width: 16.6%;
+  text-align: center;
+}
+
+.productContent {
+  width: 100%;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 30rpx 0;
+}
+
+.list text {
+  display: block;
+  width: 16.6%;
+  text-align: center;
+  font-size: 23rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delete {
+  color: #ed1b24;
+}
+
+.addBtn {
+  width: 95%;
+  background: none;
+  font-size: 30rpx;
+  color: #ed1b24;
+  outline: none;
+  border: 1px solid #ed1b24;
+  margin-top: 50rpx;
+}
+
+.submitBtn {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+  background: #ed1b24;
+  margin-top: 70rpx;
+  color: #fff;
+  outline: none;
+  font-size: 30rpx;
+}
+
+/* 附件图片 */
+
+.content {
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.accimages {
+  width: 240rpx;
+  height: 190rpx;
+  margin-left: 25%;
+}
+.pricechange{
+  border: 1rpx solid rgb(160, 155, 155);
+}

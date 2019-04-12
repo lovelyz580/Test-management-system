@@ -1,0 +1,248 @@
+/* pages/repairTask/repairTask.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.repairTaskPage {
+  margin-top: 10rpx;
+}
+
+.repairTaskPage, .taskList {
+  width: 100%;
+}
+
+.task:first-child {
+  margin-top: 0;
+}
+
+.task {
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #f5f5f5;
+  margin-top: 20rpx;
+}
+
+.taskTop {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  line-height: 50rpx;
+}
+
+.taskInfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.taskLeft {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.taskLeft text {
+  display: block;
+  font-size: 30rpx;
+}
+
+.status {
+  font-size: 30rpx;
+}
+
+.taskLeft view {
+  font-size: 30rpx;
+}
+
+.taskBot {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 15rpx 30rpx;
+  border-top: 1px solid #f5f5f5;
+}
+
+.left {
+  margin-right: auto;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right view {
+  font-size: 30rpx;
+  width: 150rpx;
+  border: 1px solid #ed1b24;
+  padding: 10rpx 0;
+  color: #ed1b24;
+  text-align: center;
+  border-radius: 10rpx;
+  margin-right: 30rpx;
+}
+
+.right text {
+  display: block;
+  padding: 10rpx 45rpx;
+  border: 1px solid #888;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: #888;
+}
+
+.centents {
+  height: 60rpx;
+  width: 100%;
+  /* background: rgb(235, 232, 232); */
+  /* padding-top:80rpx; */
+}
+
+.sousuo {
+  margin-left: 15rpx;
+  line-height: 150%;
+  text-align: center;
+  border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+}
+
+.page_row {
+  /* position: fixed; */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.searchcion {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  position: absolute;
+  left: 25rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+.page_row {
+  /* position:fixed; */
+display:flex;
+flex-direction:row;
+width:100%;
+
+}
+
+.search {width:80%;
+
+}
+
+.search_arr input {margin-left:60rpx;
+height:60rpx;
+border-radius:5px;
+font-size:30rpx;
+
+}
+.search_arr{
+  border: 1rpx solid #d0d0d0
+}
+
+
+
+
+/* 搜索 */
+
+.buttonss {
+  height: 30px;
+  line-height: 30px;
+  font-size: 30rpx;
+}
+/* 遮罩层 */
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.5;
+}
+  
+/* 弹出层 */
+.modalDlg{
+    width: 70%;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius:5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+/* 弹出层里面的图片 */
+.modalDlg image{
+  width: 120px;
+  height: 120px;
+  margin-top: 30px;
+}
+ 
+/* 弹出层里面的按钮 */
+.ok{
+  width: 80px;
+  height: 35px;
+  background: #44b549;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  margin:20px auto;
+  border-radius: 100px;
+}
+ 
+/* 弹出层里面的文字 */
+.text{
+  text-align: justify;
+  font-size: 14px;
+  color: #666;
+  width: 180px;
+  margin-top: 10px;
+}
+/*用户协议*/
+
+.user-agree{
+    color: #38cfba;
+}
+.info{
+    margin-top: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.agreement-text{
+    width: 620rpx;
+    padding: 20rpx;
+    margin: 30rpx auto 0 auto;
+    background: #f4f5f7;
+}
+
+.btn-box{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150rpx;
+    background: #fff;
+    border-top: 1rpx solid #eeeeee;
+}
+
+.btn-size{
+    margin: 30rpx 50rpx 0 50rpx;
+}

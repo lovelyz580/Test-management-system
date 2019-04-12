@@ -1,0 +1,16 @@
+<!--pages/advertising/advertising.wxml-->
+<!-- index.wxml -->
+<view class="activities">
+  <view class="horizontal">
+    <view class="tag tag_{{item.acttype}}">广告</view>
+    <text class="title">简介</text>
+  </view>
+  <image mode="aspectFill" class="photo" src="{{url}}{{imagesurl}}" data-actid="{{item.id}}" data-pubid='{{item.publisherId}}' bindtap="click_activity"></image>
+  <view>
+  <text>
+  {{imageother1}}
+  </text>
+  
+  
+  </view>
+</view>

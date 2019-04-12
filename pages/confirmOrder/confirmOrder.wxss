@@ -1,0 +1,216 @@
+/* pages/confirmOrder/confirmOrder.wxss */
+
+.confirmOrderPage {
+  width: 100%;
+}
+
+.orderInfo {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  padding-bottom: 40rpx;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 20rpx solid #ddd;
+}
+
+.orderTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 40rpx 0 20rpx 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.orderTitle view {
+  width: 10rpx;
+  background: #ed1b24;
+  height: 40rpx;
+}
+
+.orderTitle text {
+  display: block;
+  font-size: 35rpx;
+  margin-left: 10rpx;
+}
+
+.orderContent {
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #7a7a7a;
+  margin-top: 15rpx;
+}
+.info text{
+  width: 200rpx;
+}
+/* 付款方式 */
+.paytype{
+  border: 1rpx silver solid;
+}
+
+.productInfo {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.productList {
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.navList {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  justify-content: space-between;
+  background: #eee;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+}
+
+.navList text {
+  display: block;
+  font-size: 25rpx;
+  width: 16.6%;
+  text-align: center;
+}
+
+.productContent {
+  width: 100%;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.list:first-child {
+  margin-top: 70rpx;
+}
+
+.list:last-child {
+  margin-bottom: 20rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.list text {
+  display: block;
+  width: 16.6%;
+  text-align: center;
+  font-size: 23rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delete {
+  color: #ed1b24;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top:25rpx;
+  bottom: 0;
+}
+
+.footLeft {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  box-sizing: border-box;
+
+}
+
+.footLeft text {
+  display: block;
+  font-size: 35rpx;
+}
+
+.footLeft  view {
+  font-size: 35rpx;
+  color: #ed1b24;
+}
+
+.footRight {
+  text-align: center;
+  padding: 0rpx 0;
+  font-size: 35rpx;
+  margin-bottom: 10rpx;
+  color: #fff;
+  width: 95%;
+  background: #ededed;
+}
+form{
+  width: 100%;
+}
+/*用户协议*/
+.container-agreement{
+    font-size: 28rpx;
+    color: #333333;
+    line-height: 1.25rem;
+}
+.user-agree{
+    color: #38cfba;
+}
+
+.tips{
+    width: 620rpx;
+    margin: 50rpx auto 0 auto;
+    padding: 20rpx;
+    text-align: center;
+    background: #f4f5f7;
+    border-radius: 8rpx;
+}
+.tips view{
+    margin-top: 5rpx;
+}
+.agreementinfo{
+    margin-top: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-left: 30rpx;
+    margin-bottom: 30rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.agreement-text{
+    width: 620rpx;
+    padding: 20rpx;
+    margin: 30rpx auto 0 auto;
+    background: #f4f5f7;
+}
+
+.btn-box{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150rpx;
+    background: #fff;
+    border-top: 1rpx solid #eeeeee;
+}
+
+.btn-size{
+    margin: 30rpx 50rpx 0 50rpx;
+}

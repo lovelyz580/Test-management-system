@@ -1,0 +1,16 @@
+<!--pages/transaction/transaction.wxml-->
+<view class="myWalletPage">
+  <view class="recordList">
+    <view class="record" wx:for='{{list}}' bindtap='taskListDetail' wx:for-item="list" data-id='{{list.orderid}}'>
+      <view class="recordLeft">
+        <text>{{list.orderprojectname}}</text>
+        <view>{{list.usercustomerincomemoneycreatetime}}</view>
+      </view>
+
+      <view class="pay">
+        {{list.usercustomerincomemoney}}
+      </view>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,99 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+<view class="confirmOrderPage">
+  <view class="orderInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>订单信息</text>
+    </view>
+    <view class="orderContent">
+      <view class="info">
+        <text>项目名称：</text>
+        <view>{{orderprojectname}}</view>
+      </view>
+      <view class="info">
+        <text>维修地点：</text>
+        <view>{{orderaddress}}</view>
+      </view>
+      <view class="info">
+        <text>联系人：</text>
+        <view>{{ordercontactperson}}</view>
+      </view>
+      <view class="info">
+        <text>联系电话：</text>
+        <view>{{ordercontactphone}}</view>
+      </view>
+      <view class="info">
+        <text>竞标截止时间：</text>
+        <view>{{orderbiddingendtime}}</view>
+      </view>
+      <view class="info">
+        <text>计划完工时间：</text>
+        <view>{{orderplantime}}</view>
+      </view>
+      <view class="info">
+        <text>建筑类型：</text>
+        <view>{{buildingtypename}}</view>
+      </view>
+      <view class="info">
+        <text>项目类型：</text>
+        <view wx:if="{{orderprojecttype=='WX'}}">维修</view>
+        <view wx:if="{{orderprojecttype=='AZ'}}">安装</view>
+      </view>
+      <view class="info" wx:if="{{orderprojecttype=='AZ'}}">
+        <text>地产公司：</text>
+        <view>{{propertycompanyname}}</view>
+      </view>
+      <view class="info">
+        <text>付款方式：</text>
+        <input class='paytype' bindinput='paytype' placeholder='请输入您的付款方式' value='{{paytype}}'></input>
+      </view>
+    </view>
+  </view>
+  <view class="productInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>产品信息</text>
+    </view>
+    <view class="productList">
+      <view class="navList">
+        <text>产品类型</text>
+        <text>清单项目</text>
+        <!-- <text>单价</text> -->
+        <text>维修数量</text>
+        <!-- <text>价格</text> -->
+      </view>
+      <view class="productContent" style="overflow:auto;">
+        <view class="list" wx:for="{{orderList}}" wx:key>
+          <text>{{item.goodsname}}</text>
+          <text>{{item.projectname}}</text>
+          <!-- <text>{{item.orderdetailintercepttotalmoney/item.orderdetailnumber}}</text> -->
+          <text>{{item.orderdetailnumber}}</text>
+          <!-- <text>{{item.orderdetailintercepttotalmoney}}</text> -->
+        </view>
+      </view>
+    </view>
+  </view>
+ <!-- 协议 -->
+      <view class='container-agreement'>
+      <checkbox-group bindchange="agreeMent" class="agreementinfo">
+        <checkbox value='{{agreeMent}}'  checked="{{agreeMent}}"/> 我同意此
+        <text class="user-agree" catchtap="showAgreement">《施工协议》</text>
+      </checkbox-group>
+    </view>
+
+
+<!-- 底部操作 -->
+  <view class="footer">
+    <form bindsubmit="releaseBill" report-submit='true'>
+      <button class="footRight" form-type='submit' style="background:{{leafletsBg}}">
+        发布竞标
+      </button>
+    </form>
+    <form bindsubmit="leafletsBtn" report-submit='true'>
+      <button class="footRight" form-type='submit' style="background:{{releaseBg}}">
+        请平台派单
+      </button>
+    </form>
+
+  </view>
+</view>

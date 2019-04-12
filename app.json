@@ -1,0 +1,98 @@
+{
+  "pages": [
+
+    "pages/workhome/workhome",
+  "pages/index/index",
+    "pages/wxpriceadd/wxpriceadd",
+    "pages/pricemanagement/pricemanagement",
+    "pages/azpriceList/azpriceList",
+    "pages/azpricealt/azpricealt",
+    "pages/azpriceadd/azpriceadd",
+    "pages/takesingle/takesingle",
+    "pages/publishRepair/publishRepair",
+    "pages/city/city",
+    "pages/perfecity/perfecity",
+    "pages/wxpriceMaintain/wxpriceMaintain",
+    "pages/jzpriceMaintain/jzpriceMaintain",
+    "pages/partnernews/partnernews",
+    "pages/register/register",
+    "pages/servicenews/servicenews",
+    "pages/editInfo/editInfo",
+    "pages/priceEdit/priceEdit",
+    "pages/advertising/advertising",
+    "pages/perfectInfo/perfectInfo",
+    "pages/workmore/workmore",
+    "pages/applyclock/applyclock",
+    "pages/repairman/repairman",
+    "pages/experience/experience",
+    "pages/experiencemore/experiencemore",
+    "pages/taskwxDetails/taskwxDetails",
+    "pages/login/login",
+    "pages/videoplay/videoplay",
+    "pages/show/show",
+    "pages/changesorder/changesorder",
+    "pages/confirmChange/confirmChange",
+    "pages/repairTask/repairTask",
+    "pages/myWallet/myWallet",
+    "pages/worktransaction/worktransaction",
+    "pages/transaction/transaction",
+    "pages/spread/spread",
+    "pages/userEvaluate/userEvaluate",
+    "pages/workerEvaluate/workerEvaluate",
+    "pages/personal/personal",
+    "pages/pay/pay",
+    "pages/orderby/orderby",
+    "pages/underLinePayment/underLinePayment",
+    "pages/orderbiddlist/orderbiddlist",
+    "pages/orderdetail/orderdetail",
+    "pages/confirmOrder/confirmOrder",
+    "pages/taskDetails/taskDetails",
+    "pages/taskDetail/taskDetail",
+    "pages/updatepassword/updatepassword",
+    "pages/forgetpassword/forgetpassword",
+    "pages/orderManage/orderManage",
+    "pages/repairCollect/repairCollect",
+    "pages/home/home",
+    "pages/charge/index",
+    "pages/wallet/index",
+    "pages/userCollect/userCollect",
+    "pages/robbingUserCollect/robbingUserCollect",
+    "pages/putForward/putForward",
+    "pages/disputeHandle/disputeHandle",
+    "pages/taskList/taskList",
+    "pages/priceMaintain/priceMaintain",
+    "pages/auditHints/auditHints"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3f3066",
+    "navigationBarTitleText": "九华防火门",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#ed1b24",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "selectedIconPath": "images/selectHome.png",
+        "iconPath": "images/home.png",
+        "pagePath": "pages/workhome/workhome",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/my.png",
+        "iconPath": "images/selectMy.png",
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口"
+    }
+  },
+  "debug": true
+}

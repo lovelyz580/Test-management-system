@@ -1,0 +1,91 @@
+<view class="publishRepairPage">
+  <view class="editInfo">
+    <!-- 区域 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>省</text>
+        <picker bindchange="bindChangeArea" value="{{AreaIndex}}" range-key="{{'areaprovince'}}" range="{{areaList}}">
+          <view class="picker">
+            <view>{{areaList[AreaIndex].areaprovince}}</view>
+            <image src="../../images/bottom.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="info">
+      <view class="infoLeft">
+        <text>市</text>
+        <picker bindchange="bindChangeCity" value="{{CityIndex}}" range-key="{{'areaprovince'}}" range="{{cityList}}">
+          <view class="picker">
+            <view>{{cityList[CityIndex].areaprovince}}</view>
+            <image src="../../images/bottom.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 建筑类型 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>建筑类型</text>
+        <picker bindchange="bindChangeArchitecture" value="{{ArchitectureIndex}}" range-key="{{'buildingtypename'}}" range="{{ArchitectureList}}">
+          <view class="picker">
+            <view>{{ArchitectureList[ArchitectureIndex].buildingtypename}}</view>
+            <image src="../../images/bottom.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 地产公司 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>地产公司</text>
+        <picker bindchange="bindChangeEstate" value="{{EstateIndex}}" range-key="{{'propertycompanyname'}}" range="{{EstateList}}">
+          <view class="picker">
+            <view>{{EstateList[EstateIndex].propertycompanyname}}</view>
+            <image src="../../images/bottom.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 任务类别 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>任务类别</text>
+        <picker bindchange="bindChangeProject" value="{{projectIndex}}" range="{{projectList}}" range-key="{{'goodsname'}}">
+          <view class="picker">
+            <view>{{projectList[projectIndex].goodsname}}</view>
+            <image src="../../images/bottom.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 任务清单 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>任务清单</text>
+        <picker bindchange="bindChangeProduct" value="{{index}}" range-key="{{'projectname'}}" range="{{productList}}">
+          <view class="picker">
+            <view>{{productList[index].projectname}}</view>
+            <image src="../../images/bottom.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+      <!-- 清单报价 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>清单报价</text>
+          <view class="picker">
+          <input bindinput='ChangePrice' class='changeprice' value='{{price}}'></input>
+          </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<form bindsubmit="addPrice" report-submit='true'>
+  <button class="addBtn" form-type='submit'>添加清单报价</button>
+</form>

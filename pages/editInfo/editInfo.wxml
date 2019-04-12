@@ -1,0 +1,103 @@
+<!--pages/perfectInfo/perfectInfo.wxml-->
+<view class="editInfoPage">
+
+  <view class="personalList">
+    <view class="personalInfo">
+      <text class="infoLeft">姓名</text>
+      <view class="infoRight">
+        <input type="text" placeholder='请输入姓名' bindinput="getName" value="{{name}}"></input>
+      </view>
+    </view>
+    <view class="personalInfo">
+      <text class="infoLeft">性别</text>
+      <view class="infoRight">
+        <view>
+          <image src="{{ImgSrc}}" bindtap="selectSex" data-status="{{man}}" style="width:45rpx;height:45rpx;"></image>
+          <text>男</text>
+        </view>
+        <view>
+          <image src="{{ImgUrl}}" bindtap="selectSex" data-status="{{women}}" style="width:45rpx;height:45rpx;"></image>
+          <text>女</text>
+        </view>
+      </view>
+    </view>
+    <view class="personalInfo">
+      <text class="infoLeft">联系电话</text>
+      <view>
+        <input type="number" placeholder='请输入电话号码' bindinput='getPhone' value="{{phone}}" disabled='disabled'></input>
+      </view>
+    </view>
+    <view class="personalInfo">
+      <text class="infoLeft">身份类别</text>
+      <view class="idCard">
+        <view style="display:{{roleStatus}}" class="cardName" bindtap="cardName">{{userroleText}}</view>
+        <view style="display:{{selectStatus}}">
+          <checkbox-group bindchange="checkboxChange">
+            <label wx:for="{{cartArr}}" wx:key>
+              <checkbox value="{{item.name}}"></checkbox>
+              <view>{{item.value}}</view>
+            </label>
+          </checkbox-group>
+        </view>
+      </view>
+    </view>
+
+       <view class="personalInfo" >
+      <text class="infoLeft">银行卡号</text>
+      <view>
+        <input type="number" placeholder='请输入银行卡号' bindinput='getCard' value="{{useraccount}}" ></input>
+      </view>
+    </view>
+    <view class="personalInfo" >
+      <text class="infoLeft">开户行</text>
+      <view>
+        <input type="text" placeholder='请输入开户行名称' bindinput='getCardname' value="{{useraccountaddress}}" ></input>
+      </view>
+    </view>
+
+    <view class="infoHide" wx:if="{{iftrue}}">
+      <view class="personalInfo">
+        <text class="infoLeft" bindtap='city'>接单区域</text>
+        <view class="infoRegion">
+          <view class="infoLefts" bindtap='takearea'>点击选择接单区域</view>
+        </view>
+      </view>
+    </view>
+    <view class="infoHide" wx:if="{{iftrue}}">
+      <view class="personalInfo">
+        <text class="infoLeft">任务类别</text>
+        <view class="infoRegion">
+          <checkbox-group bindchange="checkboxGoodsChange">
+
+            <label class="checkbox" wx:for="{{goods}}" wx:key="item">
+              <li>
+                <checkbox value="{{item.goodsid}}" checked="{{item.checked}}" />{{item.goodsname}}
+              </li>
+            </label>
+
+          </checkbox-group>
+        </view>
+      </view>
+    </view>
+    <view class="infoHide" wx:if="{{iftrue}}">
+      <view class="personalInfo">
+        <text class="infoLeft">接单规模</text>
+        <view class="infoRegion">
+          <picker bindchange="bindSingleScaleChange" value="{{singleScaleIndex}}" range-key="{{'scaleminmax'}}" range="{{singleScaleArray}}">
+            <view class="picker">
+              <text>{{singleScaleArray[singleScaleIndex].scaleminmax}}元</text>
+              <image src="../../images/bottom.png"></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <button wx:if="{{useropenid==null ||useropenid==''}}" class="weui-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="login">关联微信帐号</button>
+
+  <form bindsubmit="submitBtn" report-submit='true'>
+    <button class="submitBtn" form-type='submit'>提交</button>
+  </form>
+</view>

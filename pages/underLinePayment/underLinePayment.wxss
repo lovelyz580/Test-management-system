@@ -1,0 +1,202 @@
+/* pages/robbingUserCollect/robbingUserCollect.wxss */
+.confirmOrderPage{
+  width:100%;
+}
+.orderInfo{
+  width:100%;
+  box-sizing: border-box;
+  padding:0 30rpx;
+  padding-bottom:40rpx;
+  border-top:1px solid #f0f0f0 ;    
+  border-bottom:20rpx solid #dddddd;
+  
+}
+.orderTitle{
+  width:100%;
+  
+  display: flex;
+  align-items: center;
+  padding:40rpx 0 20rpx 0;
+  border-bottom:1px solid #dddddd;
+}
+.orderTitle view{
+  width:10rpx;
+  background:#ed1b24;
+  height:40rpx;
+}
+.orderTitle text{
+  display: block;
+  font-size:35rpx;
+  margin-left:10rpx;
+}
+.orderContent{
+  width:100%;
+  margin-top:30rpx;
+} 
+.info{
+  width:100%;
+  display: flex;
+  align-items: center;
+  font-size:30rpx;
+  color:#7a7a7a;
+  margin-top:25rpx;
+}
+.productInfo{
+  width:100%;
+  box-sizing: border-box;
+  padding:0 30rpx;
+  border-bottom:20rpx solid #dddddd;
+}
+.productList{
+  width:100%;
+  margin-top:30rpx;
+}
+.navList{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:#eeeeee;
+  box-sizing: border-box;
+  padding:20rpx 0;
+}
+.navList text{
+  display: block;
+  font-size:25rpx;
+  width:16.6%;
+  text-align: center;
+}
+.productContent{
+  width:100%;
+}
+.list{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding:20rpx 0;
+  border-bottom:1px solid #dddddd;
+}
+.list text{
+  display: block;
+  width:16.6%;
+  text-align: center;
+  font-size:23rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.delete{
+  color:#ed1b24;
+}
+.allMoney{
+  width:100%;
+  display: flex;
+  align-items: center;
+  padding:15rpx 0;
+}
+.allLeft{
+  margin-right:auto;
+}
+.allRight{
+  display: flex;
+  align-items: center;
+}
+.allRight text{
+  display: block;
+  font-size:30rpx;
+}
+.allRight view{
+  font-size:30rpx;
+}
+.materialInfo{
+  width:100%;
+  box-sizing: border-box;
+  padding:0 30rpx;
+  padding-bottom:30rpx;
+}
+.content{
+  width:100%;
+  height:300rpx;
+  border-bottom:1px solid #dddddd;
+}
+.content image{
+  display: block;
+  width:150rpx;
+  height:150rpx;
+  margin-top:30rpx;
+  margin-left:30rpx;
+}
+.btnList{
+  width:100%;
+  display: flex;
+  align-items: center;
+  padding:20rpx 0;
+}
+.btnLeft{
+  margin-right:auto;
+}
+.applyCollect{
+  display: flex;
+  align-items:center;
+}
+.applyCollect text{
+  display: block;
+  font-size:25rpx;
+  color:#0bb092;
+  padding:10rpx 20rpx;
+  border:1px solid #0bb092;
+  border-radius: 10rpx;
+  margin-right:20rpx;
+}
+.applyCollect view{
+  font-size:25rpx;
+  color:#ed1b24;
+  padding:10rpx 20rpx;
+  border:1px solid #ed1b24;
+  border-radius: 10rpx;
+}
+.footer{
+  width:100%;
+  display: flex;
+  align-items:center;
+  position:fixed;
+  bottom:0;
+}
+.footLeft{
+  display: flex;
+  align-items: center;
+  margin-right:auto;
+  box-sizing: border-box;
+  padding-left:30rpx;
+}
+.footLeft text{
+  display: block;
+  font-size:35rpx;
+}
+.footLeft  view{
+  font-size:35rpx;
+  color:#ed1b24;
+}
+.footRight{
+  padding:30rpx 40rpx;
+  background:#ed1b24;
+  font-size:35rpx;
+  color:#fff;
+}
+.myRepairl{
+  width:45%;
+  margin-right:30rpx;
+  background:#ed1b24;
+  font-size:30rpx;
+  color:#fff;
+  float: right;
+}
+
+.text{
+  display: block;
+  color: red;
+  padding-left: 300rpx;
+  
+}

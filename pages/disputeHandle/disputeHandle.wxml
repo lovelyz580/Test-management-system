@@ -1,0 +1,16 @@
+<!--pages/disputeHandle/disputeHandle.wxml-->
+<view class="disputeHandlePage">
+  <form>
+    <view class="dispute">
+      <view class="header">
+        <text>标题</text>
+        <input placeholder='请输入标题' bindinput='getTitle'></input>
+      </view>
+      <view class="content">
+        <text>内容</text>
+        <textarea placeholder='请输入纠纷内容' bindinput="getContent"></textarea>
+      </view>
+    </view>
+    <button class="submitBtn" bindtap="submitBtn">提交</button>
+  </form>
+</view>

@@ -1,0 +1,74 @@
+<!--pages/azpricealt/azpricealt.wxml-->
+<view class="publishRepairPage">
+  <view class="editInfo">
+    <!-- 区域 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>省</text>
+        <view class="picker">
+          <input disabled='true' class='changeprice' value='{{priceone.priceareaprovincename}}'></input>
+        </view>
+      </view>
+    </view>
+    <view class="info">
+      <view class="infoLeft">
+        <text>市</text>
+        <view class="picker">
+          <input disabled='true' class='changeprice' value='{{priceone.priceareaname}}'></input>
+        </view>
+      </view>
+    </view>
+    <!-- 建筑类型 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>建筑类型</text>
+        <view class="picker">
+          <input disabled='true' class='changeprice' value='{{priceone.pricebuildingtypename}}'></input>
+        </view>
+      </view>
+    </view>
+    <!-- 地产公司 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>地产公司</text>
+        <view class="picker">
+          <input disabled='true' class='changeprice' value='{{priceone.pricepropertycompanyname}}'></input>
+        </view>
+      </view>
+    </view>
+
+    <!-- 任务类别 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>任务类别</text>
+        <view class="picker">
+          <input disabled='true' class='changeprice' value='{{priceone.goodsname}}'></input>
+        </view>
+      </view>
+    </view>
+    <!-- 任务清单 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>任务清单</text>
+        <view class="picker">
+          <input disabled='true' class='changeprice' value='{{priceone.projectname}}'></input>
+        </view>
+      </view>
+    </view>
+    <!-- 清单报价 -->
+    <view class="info">
+      <view class="infoLeft">
+        <text>清单报价</text>
+        <view class="picker">
+          <input class='pricechange' bindinput='saveprice' value='{{priceone.pricemoney}}'></input>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<form bindsubmit="addPrice" report-submit='true'>
+  <button class="addBtn" form-type='submit'>确认修改</button>
+</form>

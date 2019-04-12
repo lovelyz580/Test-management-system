@@ -1,0 +1,6 @@
+<!--pages/show/show.wxml-->
+<checkbox-group bindchange="checkboxChange">
+  <label class="checkbox" wx:for="{{provinceIndex}}">
+    <checkbox value="{{item.areaprovince}}" checked="{{item.checked}}"  />{{item.areaprovince}}
+  </label>
+</checkbox-group>

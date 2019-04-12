@@ -1,0 +1,73 @@
+
+  <!-- 公告信息 -->
+  <view class="homeTitle" catchtap='showtext'>
+    <image src="../../images/notice.png"></image>
+    <scroll-view class="containertext">
+      <view class="scrolltxt">
+        <view class="marquee_box">
+          <view class="marquee_text" style="transform: translateX(-{{marqueeDistance}}px)">
+            <text>{{text}}</text>
+            <text style="margin-right:{{marquee_margin}}px;"></text>
+            <text style="margin-right:{{marquee_margin}}px;">{{text}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 轮播图 -->
+  <view class='onPhoto'>
+    <view class='underPhoto'>
+      <!-- 轮播图底色  -->
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{imageslist}}">
+        <swiper-item>
+          <image src="{{url}}{{item.imageurl}}" class="slide-image" width="100%" height="150" bindtap='detail' data-id="{{item.imageid}}" data-detail='{{item.imageother1}}' />
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+
+  <!-- 进行中的项目 -->
+  <view class='title'>
+    <text>进行中的项目</text>
+  </view>
+
+  <!-- 维修项目列表 -->
+  <view class='homeContent'>
+
+    <!-- 维修项目列表 -->
+    <view class='OrderList' wx:if="{{status==0}}" wx:for="{{WXorderlist}}"bindtap='orderdetail' data-id="{{item.orderid}}" data-orderprojecttype="{{item.orderprojecttype}}" data-ordertype="{{item.ordertype}}">
+      <view class='ListLeft'>
+        <image src='/images/xiu.png'></image>
+      </view>
+      <view class='ListRight'>
+        <text>  {{item.orderprojectname}}维修项目招标
+          <text class="bidding" wx:if='{{item.snatchOrNo=="GQ"}}'>已过期</text>
+        <text class="bidding" wx:if='{{item.snatchOrNo=="YWC"}}'>已完成</text>
+        <text class="biddings" wx:if='{{item.snatchOrNo=="NO"}}'>可竞标</text>
+        <text class="bidding" wx:if='{{item.snatchOrNo=="YES"}}'>已竞标</text>
+        </text>
+        <text> 项目地址：  {{item.orderaddress}}</text>
+        <text> 维修时间:{{item.orderbiddingendtime}}</text>
+      </view>
+    </view>
+    <!-- 安装项目列表 -->
+    <view class='OrderList'  bindtap='orderdetail' data-id="{{item.orderid}}" data-orderprojecttype="{{item.orderprojecttype}}" data-ordertype="{{item.ordertype}}" wx:if="{{status==1}}" wx:for="{{AZorderlist}}">
+      <view class='ListLeft'>
+        <image src='/images/zhuang.png'></image>
+      </view>
+      <view class='ListRight'>
+        <text>  {{item.orderprojectname}}安装项目招标
+          <text class="bidding" wx:if='{{item.snatchOrNo=="GQ"}}'>已过期</text>
+        <text class="bidding" wx:if='{{item.snatchOrNo=="YWC"}}'>已完成</text>
+        <text class="biddings" wx:if='{{item.snatchOrNo=="NO"}}'>可竞标</text>
+        <text class="bidding" wx:if='{{item.snatchOrNo=="YES"}}'>已竞标</text>
+        </text>
+        <text> 项目地址：  {{item.orderaddress}}</text>
+        <text> 安装时间:{{item.orderbiddingendtime}}</text>
+      </view>
+    </view>
+  </view>

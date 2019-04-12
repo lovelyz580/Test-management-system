@@ -1,0 +1,119 @@
+<!--pages/taskDetails/taskDetails.wxml-->
+<view class="confirmOrderPage">
+  <view class="orderInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>订单信息</text>
+    </view>
+    <view class="orderContent">
+      <view class="info">
+        <text>项目名称：</text>
+        <view>{{orderprojectname}}</view>
+      </view>
+      <view class="info">
+        <text>维修地点：</text>
+        <view>{{orderaddress}}
+          <view bindtap='chooseLocation' class='choose'>（点击查看导航）
+          </view>
+        </view>
+      </view>
+      <view class="info">
+        <text>联系人：</text>
+        <view>{{ordercontactperson}}</view>
+      </view>
+      <view class="info">
+        <text>联系电话：</text>
+        <view>{{ordercontactphone}}</view>
+      </view>
+      <view class="info">
+        <text>竞标截止时间：</text>
+        <view>{{orderbiddingendtime}}</view>
+      </view>
+      <view class="info">
+        <text>计划维修时间：</text>
+        <view>{{orderplantime}}</view>
+      </view>
+      <view class="info">
+        <text>建筑类型：</text>
+        <view>{{buildingtypename}}</view>
+      </view>
+      <view class="info">
+        <text>项目类型：</text>
+        <view wx:if="{{orderprojecttype=='WX'}}">维修</view>
+        <view wx:if="{{orderprojecttype=='AZ'}}">安装</view>
+      </view>
+        <view class="info" wx:if="{{orderprojecttype=='AZ'}}">
+        <text>地产公司：</text>
+        <view>{{propertycompanyname}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="productInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>产品信息</text>
+    </view>
+    <view class="productList">
+      <view class="navList">
+        <text>产品类型</text>
+        <text>清单项目</text>
+        <text wx:if="{{userrole!='KH,'&&ordertype=='QD'}}">单价</text>
+        <text>数量</text>
+        <text>所需工具</text>
+      </view>
+      <view class="productContent">
+        <view class="list" wx:for="{{orderList}}" wx:key>
+          <text>{{item.goodsname}}</text>
+          <text>{{item.projectname}}</text>
+          <input wx:if="{{userrole!='KH,'&&ordertype=='QD'}}" type="text" step="0.01" class='text' value='{{item.orderpricemoney}}' bindblur='save' data-money='{{item.orderpricemoney}}' data-index='{{index}}'>{{item.orderpricemoney}}</input>
+          <text>{{item.orderdetailnumber}}</text>
+          <text bindtap='detail' data-detail='{{item.projectremark}}'>{{item.projectremark}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="productImg" wx:if='{{orderprojecttype=="AZ"&&orderremark!=null}}'>
+    <view class="orderTitle">
+      <view></view>
+      <text>项目明细</text>
+    </view>
+    <view class="productList">
+      <image src='{{url}}{{orderremark}}' bindtap="previewImage" data-url='{{url}}{{orderremark}}'> </image>
+    </view>
+  </view>
+  <!-- 判断 是否登录 有权限 -->
+  <view wx:if="{{rolestatic}}">
+    <view class="productInIn" wx:if="{{userrole!='KH,' && ordertype!='PD'}}">
+      <view class="orderTitle">
+        <view></view>
+        <text>差旅费</text>
+        <input type='number' bindblur='accept' bindfocus='focus' placeholder='请输入差旅费' value='{{ordertraveltotalmoney}}'>{{ordertraveltotalmoney}}</input>(元)
+      </view>
+      <view class="productList">
+
+      </view>
+    </view>
+
+
+
+    <view class="footer" wx:if="{{userrole!='KH,' && ordertype!='PD'}}">
+      <view class="footLeft">
+        <text>合计：</text>
+        <view>{{orderintercepttotalmoney}}</view>
+
+      </view>
+      <form bindsubmit="orderTaking" report-submit='true'>
+        <button class="footRight" form-type='submit' wx:if='{{count<1}}' disabled="{{onclick}}">
+          立即竞标
+        </button>
+      </form>
+      <button class="footRights" wx:if='{{count>0}}' disabled="true">
+        您已竞标
+      </button>
+    </view>
+
+
+  </view>
+</view>

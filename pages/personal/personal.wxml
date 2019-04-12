@@ -1,0 +1,106 @@
+<!--pages/personal/personal.wxml-->
+<view class="personalPage">
+  <view class="personalInfo">
+    <view class="personalName">{{name}}</view>
+    <text>账号：{{phone}}</text>
+    <view class="money">
+      余额：
+      <input bindtap='money' disabled="disabled" class='moneys' value="{{moneyeye}}元"></input>
+      <view style="margin-left:30rpx;">信用分：{{usercredit}}分</view>
+    </view>
+  </view>
+  <view class="personalList">
+    <view class="list" bindtap="orderList" wx:if="{{userrole=='KH,'}}">
+      <view>
+        <image src="../../images/selectOrder.png"></image>
+        <text>我的订单</text>
+      </view>
+      <image src="../../images/right.png" class="listRight"></image>
+    </view>
+    <view class="list" bindtap="editInfo">
+      <view>
+        <image src="../../images/edit.png"></image>
+        <text>修改个人信息</text>
+      </view>
+      <image src="../../images/right.png" class="listRight"></image>
+    </view>
+    <view class="list" bindtap="myWallet">
+      <view>
+        <image src="../../images/money.png"></image>
+        <text>我的钱包</text>
+      </view>
+      <image src="../../images/right.png" class="listRight"></image>
+    </view>
+        <!-- 订单任务 -->
+    <view class="list" bindtap="repairTask" wx:if="{{userrole!='KH,'}}">
+      <view>
+        <image src="../../images/repair.png"></image>
+        <text>订单任务</text>
+      </view>
+      <image src="../../images/right.png" class="listRight"></image>
+    </view>
+        <!-- 被派单信息 -->
+    <!-- <view class="list" bindtap="takesingle" wx:if="{{userrole!='KH,'}}">
+      <view>
+        <image src="../../images/takesingle.png"></image>
+        <text>被派单任务</text>
+      </view>
+      <image src="../../images/right.png" class="listRight"></image>
+    </view> -->
+
+    <!-- 竞标任务 -->
+    <view class="list" bindtap="biddTask" wx:if="{{userrole!='KH,'}}">
+      <view>
+        <image src="../../images/bidd.png"></image>
+        <text>竞标任务</text>
+      </view>
+      <image src="../../images/right.png" class="listRight"></image>
+    </view>
+    <view class="list" bindtap="priceMaintain" wx:if="{{userrole!='KH,'}}">
+      <view>
+        <image src="../../images/price.png"></image>
+        <text>单价维护</text>
+      </view>
+      <image src="../../images/right.png" class="listRight"></image>
+    </view>
+    
+    <!-- 推广二维码 -->
+    <view class="list" bindtap="spread">
+      <view>
+        <image src="../../images/spread.png"></image>
+        <text>推广二维码</text>
+      </view>
+      <image src="../../images/right.png" class="listRight"></image>
+    </view>
+    <view class="list" bindtap="phonecallevent">
+      <view>
+        <image src="../../images/concact.png"></image>
+        <text>联系客服</text>
+      </view>
+      <image src="../../images/right.png" class="listRight"></image>
+    </view>
+    <!-- 修改密码 -->
+    <view class="list" bindtap="updatepassword">
+      <view>
+        <image src="../../images/password.png"></image>
+        <text>修改密码</text>
+      </view>
+      <image src="../../images/right.png" class="listRight"></image>
+    </view>
+
+  </view>
+  <form bindsubmit="receipt" report-submit='true'>
+    <button class="receipt" disabled="{{onclick}}" form-type='submit' wx:if="{{userrole!='KH,'}}">{{receiptText}}</button>
+  </form>
+
+  <form bindsubmit="outlogin" report-submit='true'>
+    <button class="receipt" disabled="{{onclick}}" form-type='submit'>退出</button>
+  </form>
+
+  <!-- <view>
+
+<text>当前版本5.008</text>
+</view> -->
+
+
+</view>

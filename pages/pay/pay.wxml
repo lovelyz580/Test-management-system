@@ -1,0 +1,41 @@
+<view class="wraper">
+  <!-- 商品订单 -->
+  <view class="pay">
+    <text class="product">商品订单</text>
+    <text class="price">{{customermoney}}元</text>
+    <!-- <text class="price">
+    {{ordertotalmoney}}元</text>  -->
+  </view>
+  <!-- 订单详情 -->
+  <view class="order">
+    <view class="">订单描述:
+      <text>{{orderprojectname}}</text>
+    </view>
+    <view>订单编号:
+      <text>{{orderid}}</text>
+    </view>
+  </view>
+  <!-- 支付方式 -->
+  <view class="payTitle">
+    <text>请选择支付方式</text>
+  </view>
+  <view class="payType" bindtap='payType'>
+    <view class="payList">
+      <view class="payImg">
+        <image src="../../images/wxpay.png"></image>
+      </view>
+      <view>微信支付</view>
+    </view>
+
+  </view>
+  <view class="payType" bindtap='UPpay'>
+    <view class="payList">
+      <view class="payImg">
+        <image src="../../images/UP.png"></image>
+      </view>
+      <view>线下付款</view>
+    </view>
+
+  </view>
+
+</view>

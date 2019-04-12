@@ -1,0 +1,115 @@
+/**index.wxss**/
+
+.indexPage {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+}
+.images{
+  width: 100%;
+  height: 560rpx;
+  padding-bottom: 20rpx;
+}
+.images image{
+  
+  border-top: 2rpx red solid;
+  border-bottom:2rpx red solid;
+}
+
+.phone, .password {
+  margin-top: 30rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20rpx 0;
+}
+
+.phone input, .password input {
+  display: block;
+  font-size: 30rpx;
+}
+
+.phone input {
+  width: 90%;
+  margin-left: 20rpx;
+}
+
+.password input {
+  width: 80%;
+  margin-left: 20rpx;
+}
+
+.phone image {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.left {
+  width: 95%;
+  display: flex;
+  align-items: center;
+}
+
+.left image {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.right image {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.loginBtn {
+  margin-top: 70rpx;
+  background: #ed1b24;
+  border: none;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+button::after {
+  border: none;
+}
+
+.btn {
+  border: none;
+  background: none;
+  outline: none;
+  display: block;
+  width: 100%;
+  text-align: right;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  text-decoration: underline;
+  color: #676767;
+  padding: 0;
+}
+
+.toRegister{
+  display: block;
+  width: 50%;
+  text-align: left;
+  font-size: 30rpx;
+  text-decoration: underline;
+  color: #676767;
+  float: left;
+}
+
+.passwordRegister{
+  display: block;
+  width: 50%;
+  text-align: right;
+  font-size: 30rpx;
+  text-decoration: underline;
+  color: #676767;
+  float: left;
+}
+.register{
+  overflow: hidden;
+  margin-top:30rpx;
+}

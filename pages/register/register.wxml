@@ -1,0 +1,49 @@
+<!--pages/register/register.wxml-->
+<view class="indexPage">
+
+  <view class="phone">
+    <image src="../../images/phone.png"></image>
+    <input type="number" placeholder='请输入手机号' bindblur="outPhone" bindinput="getPhone" disabled='{{phoneStatus}}' value='{{phone}}'></input>
+  </view>
+    <view class="name">
+    <image src="../../images/my.png"></image>
+    <input  placeholder='请输入姓名'  bindinput="getName" disabled='{{phoneStatus}}' value='{{name}}'></input>
+  </view>
+  <view class="code">
+    <view class="codeLeft">
+      <image src="../../images/code.png"></image>
+      <input type="{{typeStatus}}" placeholder='请输入验证码' bindinput="getCode"></input>
+    </view>
+    <form bindsubmit="codeBtn" report-submit='true'>
+    <button class="getCode" form-type='submit' disabled='{{disabled}}'>{{time}}</button>
+    </form>
+  </view>
+  <view class="password">
+    <view class="left">
+      <image src="../../images/password.png"></image>
+      <input password="{{passwordtype}}" placeholder='请输入密码' bindinput="getPassword"></input>
+    </view>
+    <view class="right">
+      <image src="{{src}}" data-status="{{status}}" bindtap="eyes"></image>
+    </view>
+  </view>
+  <view class="password">
+    <view class="left">
+      <image src="../../images/password.png"></image>
+      <input type="password" placeholder='请再次输入密码' bindinput="getAgainPassword"></input>
+    </view>
+  </view>
+  <view class="submit">
+    <view class="agree">
+      <checkbox color="#f9364f" value="点击注册" bindtap='agreen' checked="{{agreement}}" />点击下一步，表示您同意此
+      <text class="agreement" bindtap='agreement'>《服务协议》</text>
+    </view>
+  </view>
+  <form bindsubmit="login" report-submit='true'>
+    <button class="loginBtn" form-type='submit'>下一步</button>
+  </form>
+  <form bindsubmit="gologin" report-submit='true'>
+    <button class="loginBtn" form-type='submit'>已有账号,去登录</button>
+  </form>
+
+</view>

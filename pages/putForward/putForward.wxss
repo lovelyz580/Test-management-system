@@ -1,0 +1,59 @@
+/* pages/putForward/putForward.wxss */
+page{
+  background:#f5f5f5;
+}
+.putForwardPage{
+  width:100%;
+}
+.putForwardInfo{
+  width:100%;
+  background:#fff;
+}
+.money{
+  width:100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding:20rpx 30rpx;
+  border-top:1px solid #f5f5f5;
+}
+.money text{
+  display: block;
+  width:25%;
+  font-size:30rpx;
+}
+.money input{
+  display: block;
+  font-size:30rpx;
+}
+.money view{
+  font-size:30rpx;
+  color:#ed1b24;
+}
+.info{
+  width:100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding:20rpx 30rpx;
+  border-top:1px solid #f5f5f5;
+}
+.info text{
+  display: block;
+  width:25%;
+  font-size:30rpx;
+}
+.info input{
+  display: block;
+  font-size:30rpx;
+}
+.putForwardBtn{
+  display: block;
+  width:95%;
+  margin:0 auto;
+  background:#ed1b24;
+  margin-top:70rpx;
+  color:#fff;
+  outline: none;
+  font-size:30rpx;
+}

@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="indexPage">
+  <view class='images'>
+    <image src='/images/login.png'></image>
+  </view>
+
+
+  <form bindsubmit="login" report-submit="true">
+    <view class="phone">
+      <image src="../../images/phone.png"></image>
+      <input type="number" placeholder='请输入手机号' bindinput="getPhone"></input>
+    </view>
+    <view class="password">
+      <view class="left">
+        <image src="../../images/password.png"></image>
+        <input type="password" placeholder='请输入密码' bindinput="getPassword" style="display:{{typeStatus}}"></input>
+        <input type="text" placeholder='请输入密码' bindinput="getPassword" style="display:{{textStatus}}" value="{{password}}"></input>
+      </view>
+      <view class="right">
+        <image src="{{src}}" data-status="{{status}}" bindtap="eyes"></image>
+      </view>
+    </view>
+    <button class="loginBtn" formType="submit" disabled="{{onclick}}">登录</button>
+  </form>
+
+  <view class='register'>
+    <text class="toRegister" bindtap="forgetpassword" style="display:{{btnStatus}}">忘记密码</text>
+    <text class="passwordRegister" bindtap="toRegister" style="display:{{btnStatus}}"> 申请注册</text>
+  </view>
+</view>

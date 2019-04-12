@@ -1,0 +1,21 @@
+<!--pages/myWallet/myWallet.wxml-->
+<view class="myWalletPage">
+  <view class="moneyTop">
+    <view class="top">
+      <text>￥</text>
+      <view>{{money}}</view>
+    </view>
+<form bindsubmit="topForwardBtn" report-submit='true'>
+    <button class="topForwardBtn" form-type='submit'>充值</button>
+    </form>
+    <form bindsubmit="putForwardBtn" report-submit='true'>
+    <button class="putForwardBtn" form-type='submit'>提现</button>
+       </form>
+  </view>
+  <view class="recordList">
+    <view class="record" bindtap='offlinetransaction' data-role='{{userrole}}'>
+      <text>交易记录</text>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,168 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+<view class="confirmOrderPage">
+  <view class="orderInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>订单信息</text>
+    </view>
+    <view class="orderContent">
+      <view class="info">
+        <text>项目名称：</text>
+        <view>{{orderprojectname}}</view>
+      </view>
+      <view class="info">
+        <text>维修地点：</text>
+        <view>{{orderaddress}}
+          <view bindtap='chooseLocation' class='choose'>（点击查看导航）
+          </view>
+        </view>
+      </view>
+      <view class="info">
+        <text>联系人：</text>
+        <view>{{ordercontactperson}}</view>
+      </view>
+      <view class="info">
+        <text>联系电话：</text>
+        <view>{{ordercontactphone}}</view>
+      </view>
+
+      <view class="info" wx:if='{{ordertype=="QD"}}'>
+        <text>竞标截止时间：</text>
+        <view>{{orderbiddingendtime}}</view>
+      </view>
+      <view class="info">
+        <text>计划完工时间：</text>
+        <view>{{orderplantime}}</view>
+      </view>
+      <view class="info">
+        <text>建筑类型：</text>
+        <view>{{buildingtypename}}</view>
+      </view>
+      <view class="info">
+        <text>项目类型：</text>
+        <view wx:if="{{orderprojecttype=='WX'}}">维修</view>
+        <view wx:if="{{orderprojecttype=='AZ'}}">安装</view>
+      </view>
+    </view>
+  </view>
+  <view class="productInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>产品信息</text>
+    </view>
+    <view class="productList">
+      <view class="navList">
+        <text>产品类型</text>
+        <text>清单项目</text>
+        <!-- <text>单价</text> -->
+        <text>数量</text>
+        <text>所需工具</text>
+      </view>
+      <view class="productContent" style="overflow:auto;">
+        <view class="list" wx:for="{{orderList}}" wx:key>
+          <text>{{item.goodsname}}</text>
+          <text>{{item.projectname}}</text>
+       
+          <text>{{item.orderdetailnumber}}</text>
+       <text bindtap='detail' data-detail='{{item.projectremark}}'>{{item.projectremark}}</text>
+        </view>
+      </view>
+      <view class="allMoney">
+        <view class="allLeft">
+          <text>差旅费：</text>
+          <view>{{ordertraveltotalmoney==null?0:ordertraveltotalmoney}}</view>
+        </view>
+        <view class="allRight" wx:if="{{ordertype=='QD'}}">
+          <text>合计：</text>
+          <view>{{ordertotalmoney}}</view>
+        </view>
+        <view class="allRight" wx:if="{{ordertype=='PD'&&userrole=='KH,'}}">
+          <text>合计：</text>
+          <view>{{orderintercepttotalmoney}}</view>
+        </view>
+        <view class="allRight" wx:if="{{ordertype=='PD'&&userrole!='KH,'}}">
+          <text>合计：</text>
+          <view>{{ordertotalmoney}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="productInfo" wx:if="{{userrole!='KH,'}}">
+    <view class="orderTitle">
+      <view></view>
+      <text>流程变更</text>
+        <form bindsubmit="changes" report-submit="true"  >
+      <button class='changes' bindtap=''>申请变更</button> 
+      </form>
+    </view>
+  </view> -->
+
+
+  <view class="productInfo" wx:if="{{ordertype=='PD'||ordertype=='QD'}}">
+    <view class="orderTitle">
+      <view></view>
+      <text>维修人员</text>
+    </view>
+
+    <view class="productList">
+      <view class="navList">
+        <text>姓名</text>
+        <text>联系方式</text>
+
+        <text>信用分</text>
+
+      </view>
+      <view class="navList">
+        <text>{{userrealname}}</text>
+        <text>{{userphone}}</text>
+        <text>{{usercredit}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="productInfo" wx:if="{{ordertype=='PD'||ordertype=='QD'}}">
+    <view class="orderTitle">
+      <view></view>
+      <text>参与竞标人员</text>
+    </view>
+
+    <view class="productList">
+      <view class="navList">
+        <text>姓名</text>
+        <text>联系方式</text>
+
+        <text>信用分</text>
+
+      </view>
+      <view class="navList" wx:for="{{userlist}}">
+        <text>{{item.userrealname}}</text>
+        <text>{{item.userphone}}</text>
+        <text>{{item.usercredit}}</text>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="productevaluate" wx:if="{{orderstate=='DDJS'}}">
+      <view class="orderTitle">
+        <view></view>
+        <text>评价</text>
+      </view>
+      <view class="list" style="justify-content:flex-start" wx:for="{{lists}}" wx:for-index='key' wx:for-item="shu">
+        <text>{{shu.name}}:</text>
+        <block wx:for="{{shu.score}}">
+          <image catchtap='start' data-id='{{index}}' id='{{index+1}}' data-key='{{key}}' data-in='liang' class='start' src='../../images/use_sc2.jpg'></image>
+        </block>
+
+      </view>
+      <view class="orderTitle">
+        <view></view>
+        <text>评论</text>
+      </view>
+      <view class='listtext'>
+        <text>
+      {{evaluateserviceopinion}}
+      </text>
+      </view>
+    </view>
+  </view>
+</view>

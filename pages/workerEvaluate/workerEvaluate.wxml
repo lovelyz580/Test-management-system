@@ -1,0 +1,21 @@
+<!--pages/workerEvaluate/workerEvaluate.wxml-->
+<view class="workerEvaluatePage">
+  <view class="startList">
+    <view class="list" wx:for="{{list}}" wx:for-index='key' wx:for-item="shu">
+      <text>{{shu.evaluateservicesetupname}}:</text>
+      <view>
+        <block wx:for="{{shu.evaluateservicesetupscore}}">
+          <image catchtap='start' data-id='{{index}}' id='{{index+1}}' data-key='{{key}}' data-in='liang' class='start' src='../../images/use_sc2.jpg'></image>
+        </block>
+        <block wx:for="{{shu.evaluateservicesetuplossscore}}">
+          <image catchtap='start' class='start' id='{{index+1}}' data-key='{{key}}' data-in='komg' src='../../images/use_sc.jpg'>
+          </image>
+        </block>
+      </view>
+    </view>
+
+
+  </view>
+  <textarea placeholder='请留下您宝贵的意见' class="opinion" bindinput="getOpinion"></textarea>
+  <button class="submitBtn" bindtap="submitBtn">提交</button>
+</view>

@@ -1,0 +1,5 @@
+<!--pages/auditHints/auditHints.wxml-->
+<view class="auditHintsPage">
+  <view>请您耐心等待，已快马加鞭督促管理员审核，通过即可登录系统。</view>
+  <text>联系电话：0312-5971018</text>
+</view>

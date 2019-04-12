@@ -1,0 +1,55 @@
+<!--pages/experiencemore/experiencemore.wxml-->
+<view class="homePage">
+
+  <!-- 公告信息 -->
+  <view class="homeTitle" catchtap='showtext'>
+    <image src="../../images/notice.png"></image>
+    <scroll-view class="containertext">
+      <view class="scrolltxt">
+        <view class="marquee_box">
+          <view class="marquee_text" style="transform: translateX(-{{marqueeDistance}}px)">
+            <text>{{text}}</text>
+            <text style="margin-right:{{marquee_margin}}px;"></text>
+            <text style="margin-right:{{marquee_margin}}px;">{{text}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 轮播图 -->
+  <view class='onPhoto'>
+    <view class='underPhoto'>
+      <!-- 轮播图底色  -->
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{imageslist}}">
+        <swiper-item>
+          <image src="{{url}}{{item.imageurl}}" class="slide-image" width="100%" height="150" bindtap='detail' data-id="{{item.imageid}}" data-detail='{{item.imageother1}}' />
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+
+  <!-- 进行中的项目 -->
+  <view class='title'>
+    <text>项目经验分享</text>
+  </view>
+
+
+ <!-- 经验分享列表 -->
+    <view class='homeContent'>
+      <!-- 经验分享列表 -->
+      <view class='OrderList' wx:for="{{experiencelist}}" bindtap='videoplay' data-id='{{item.sharevideoid}}'>
+      <view class='ListLeft'>
+        <image src='/images/fen.png'></image>
+      </view>
+      <view class='ListRight'>
+        <text wx:if="{{item.sharevideotype=='WX'}}"> 类型：  维修</text>
+          <text wx:if="{{item.sharevideotype=='AZ'}}"> 类型：  安装</text>
+        <text> 分享时间:{{item.sharevideocreatetime}}</text>
+      </view>
+    </view>
+    </view>
+</view>

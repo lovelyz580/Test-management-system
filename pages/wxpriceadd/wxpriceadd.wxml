@@ -1,0 +1,12 @@
+<!--pages/wxpriceadd/wxpriceadd.wxml-->
+<view>
+  <view>
+    <view class="title">日工资</view>
+    <input placeholder='请输入您的报价' type='number' value='{{price}}' bindinput='priceadd'></input>
+  </view>
+
+  <form bindsubmit="addprice" report-submit='true'>
+    <button class="addBtn" form-type='submit'>提交</button>
+  </form>
+
+</view>

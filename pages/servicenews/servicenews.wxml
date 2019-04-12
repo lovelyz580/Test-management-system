@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class='homePages'>
+  <!-- 图片 -->
+  <view class='photo'>
+    <view class='onPhoto'>
+      <view class='underPhoto'></view>
+      <!-- <image src='{{url}}{{imagesurl}}'></image> -->
+       <image src='{{url}}/sunweb/resources/upload/61376da7-dd8d-4229-919a-f59e8b6512021544491004289.png'></image>
+    </view>
+    
+  </view>
+  <!-- 文字 -->
+  <view class='word'>
+    <text class='titleWord'>其他服务</text>
+    <text class='contentWord'>{{imageother1}}
+    </text>
+  </view>
+</view>

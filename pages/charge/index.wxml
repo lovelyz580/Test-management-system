@@ -1,0 +1,12 @@
+<!--pages/charge/index.wxml-->
+<view class="container">
+    <view class="title">请输入充值金额</view>
+    <view class="input-box">
+        <input bindinput="bindInput" />
+    </view>
+
+    <form bindsubmit="charge" report-submit='true'>
+
+    <button  form-type='submit' class="btn-charge">充值</button>
+    </form>
+</view>

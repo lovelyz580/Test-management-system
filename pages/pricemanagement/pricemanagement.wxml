@@ -1,0 +1,16 @@
+<!--pages/pricemanagement/pricemanagement.wxml-->
+<view class="info" bindtap='anprice' wx:if="{{userrole =='WA'}}">
+  <view class="infoLeft">
+    <text>安装报价</text>
+  </view>
+</view>
+<view class="info" bindtap="modalinput">
+  <view class="infoLeft">
+    <text>维修报价</text>
+  </view>
+</view>
+<!-- <view class="info" bindtap='jzprice'>
+  <view class="infoLeft">
+    <text>兼职报价</text>
+  </view>
+</view> -->

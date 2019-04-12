@@ -1,0 +1,31 @@
+<!--pages/priceMaintain/priceMaintain.wxml-->
+<view class="priceMaintainPage">
+  <view class="productPrice" style="margin-top:0" wx:for="{{priceArray}}" data-index="{{index}}" wx:key>
+    <view class="productLeft">
+      <view class="productName">
+        <text>产品类型:</text>
+        <text>{{item.goodsname}}</text>
+        <view>生效</view>
+      </view>
+      <view class="productName">
+        <text>清单项目:</text>
+        <text>{{item.projectname}}</text>
+      </view>
+      <view class="priceMoney">
+        <text>单价:</text>
+        <text> </text>
+        <input id="pricemoney" data-id='{{index}}' bindblur='save' name="pricemoney{{index}}" value='{{item.pricemoney}}' />
+      </view>
+    </view>
+    <image src="../../images/right.png"></image>
+  </view>
+</view>
+<view class="btns">
+  <form bindsubmit="Btnoff" report-submit="true">
+    <button class='myRepair' formType="submit" style='margin-bottom:20px'>取消</button>
+  </form>
+
+  <form bindsubmit="buttonBtn" report-submit="true">
+    <button class='myRepairl' formType="submit">提交</button>
+  </form>
+</view>

@@ -1,0 +1,76 @@
+<!--pages/orderManage/orderManage.wxml-->
+<view class='centents'>
+  <view class='page_row'>
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='20' type='search'></icon>
+        <input class="" bindblur='searchValueInput' placeholder="请输入关键字" value="{{searchValue}}" />
+      </view>
+    </view>
+    <form bindsubmit="suo" report-submit="true">
+      <view class='sousuo'>
+        <button formType="submit" class="buttonss">
+          搜索
+        </button>
+      </view>
+    </form>
+  </view>
+</view>
+<view class="repairTaskPage">
+  <view class="taskList">
+    <view class="task" wx:for="{{taskList}}" wx:key>
+      <view class="taskTop" bindtap="taskListDetail" data-id="{{item.orderid}}">
+        <view class="taskInfo">
+          <view class="taskLeft">
+            <text>订单编号：</text>
+            <view>{{item.orderid}}</view>
+          </view>
+          <view class="status" wx:if="{{item.orderstate=='BJ'}}" style="color:#ed1b24">等待发布</view>
+          <view class="status" wx:elif="{{item.orderstate=='YSHG'}}">待付款</view>
+           <view class="status" wx:elif="{{item.orderstate=='QRQX'}}">已取消</view>
+          <view class="status" wx:elif="{{item.orderstate=='YFK'}}">待确认收款</view>
+          <view class="status" wx:elif="{{item.orderstate=='ALL_CHECK'}}">待评价</view>
+          <view class="status" wx:elif="{{item.orderstate=='PDQR'}}">待确认</view>
+          <view class="status" wx:elif="{{item.orderstate=='KWYPJ'}}">待评价</view>
+          <view class="status" wx:elif="{{item.orderstate=='SQYS'}}">等待验收</view>
+          <view class="status" wx:elif="{{item.orderstate=='KHYPJ'}}">待评价</view>
+          <view class="status" wx:elif="{{item.orderstate=='FB'}}">竞标中</view>
+          <view class="status" wx:if="{{item.orderstate=='DDJS'}}" style="color:#ed1b24;">已完成</view>
+          <view class="status" wx:elif="{{item.orderstate=='JS'}}" style="color:#0bb092;">进行中</view>
+        </view>
+        <view class="taskInfo">
+          <view class="taskLeft" style="color:#747474">
+            <text>项目名称：</text>
+            <view>{{item.orderprojectname}}</view>
+          </view>
+        </view>
+        <view class="taskInfo">
+          <view class="taskLeft" style="color:#747474">
+            <text>发布时间：</text>
+            <view>{{item.ordercreatetime}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="taskBot">
+        <view class="left"></view>
+        <view class="right">
+          <!-- <view wx:if="{{item.ordercheckallstate==null&&item.orderstate=='PDQR'}}" bindtap="ConfirmButton" data-orderid="{{item.orderid}}" data-orderserviceuserid='{{item.orderserviceuserid}}'>确认接收</view> -->
+
+
+          <!-- 订单变更 -->
+          <view wx:if="{{item.ordercheckallstate==null&&item.orderstate=='BGQR'}}" bindtap="ChangesOrder" data-orderid="{{item.orderid}}">订单变更</view>
+ 
+ <!-- 取消订单 -->
+ <view wx:if="{{item.orderstate=='JS'}}" data-id="{{item.orderid}}" bindtap="delCollect">取消订单</view>
+          <view wx:if="{{item.orderstate=='BJ'}}" data-id="{{item.orderid}}" bindtap="repairCollect">发布项目</view>
+          <view wx:if="{{item.orderstate==null}}" data-id="{{item.orderid}}" bindtap="repairCollect">发布项目</view>
+          <view wx:elif="{{item.orderstate=='YSHG'}}" bindtap="gotopay" data-id="{{item.orderid}}" data-orderserviceuserid='{{item.orderserviceuserid}}'>去付款</view>
+          <view wx:elif="{{item.orderstate=='ALL_CHECK'}}" bindtap="userEvaluate" data-id="{{item.orderid}}" data-orderserviceuserid='{{item.orderserviceuserid}}'>评价</view>
+          <view wx:if="{{item.orderstate=='SQYS'}}" data-ordertype="{{item.ordertype}}" data-orderid="{{item.orderid}}" bindtap="checkBtn">验收</view>
+          <view wx:if="{{item.orderstate=='FB'}}" style="display:none">维修验收</view>
+          <view class='orderby' wx:if="{{item.ordertype=='QD'&&item.orderserviceuserid==null}}" bindtap="orderby" data-id="{{item.orderid}}">查看竞标人</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

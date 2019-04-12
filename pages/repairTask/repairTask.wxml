@@ -1,0 +1,84 @@
+<!--pages/repairTask/repairTask.wxml-->
+<view class='centents'>
+  <view class='page_row'>
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='20' type='search'></icon>
+        <input class="" bindblur='searchValueInput' placeholder="请输入关键字" value="{{searchValue}}" />
+      </view>
+    </view>
+    <form bindsubmit="suo" report-submit="true">
+      <view class='sousuo'>
+        <button formType="submit" class="buttonss">
+          搜索
+        </button>
+      </view>
+    </form>
+  </view>
+</view>
+<view class="repairTaskPage">
+  <view class="taskList">
+    <view class="task" wx:for="{{taskList}}" wx:key>
+      <view class="taskTop" bindtap="taskListDetail" data-id="{{item.orderid}}">
+        <view class="taskInfo">
+          <view class="taskLeft">
+            <text>订单编号：</text>
+            <view>{{item.orderid}}</view>
+          </view>
+          <view class="status" wx:if="{{item.orderstate=='PDQR'}}" style="display:{{collectStatus}};color:#ed1b24;">等待确认</view>
+             <view class="status" wx:if="{{item.orderstate=='QRQX'}}" style="display:{{collectStatus}};color:#ed1b24;">订单已取消</view>
+          <view class="status" wx:if="{{item.orderstate=='SQYS'}}" style="display:{{collectStatus}};color:#ed1b24;">等待验收</view>
+          <view class="status" wx:if="{{item.orderstate=='BGQR'}}" style="display:{{collectStatus}};color:#ed1b24;">等待变更</view>
+          <view class="status" wx:if="{{item.orderstate=='YSK'}}" style="display:{{collectStatus}};color:#ed1b24;">等待验收</view>
+          <view class="status" wx:if="{{item.orderstate=='YSHG'||item.orderstate=='YFK'||item.orderstate=='QRFK'}}" style="color:#ed1b24;">待收款</view>
+          <view class="status" wx:if="{{item.orderstate=='ALL_CHECK'||item.orderstate=='KHYPJ'}}" style="color:#ed1b24;">待评价</view>
+          <view class="status" wx:if="{{item.orderstate=='DDJS'}}" style="color:#ed1b24;">已完成</view>
+        </view>
+        <view class="taskInfo">
+          <view class="taskLeft" style="color:#747474">
+            <text>项目名称：</text>
+            <view>{{item.orderprojectname}}</view>
+          </view>
+        </view>
+        <view class="taskInfo">
+          <view class="taskLeft" style="color:#747474">
+            <text>发布时间：</text>
+            <view>{{item.ordercreatetime}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="taskBot">
+        <view class="left"></view>
+        <view class="right">
+          <view wx:if="{{item.ordercheckallstate==null&&item.orderstate=='PDQR'}}" bindtap="ConfirmButton" data-orderid="{{item.orderid}}">确认接收</view>
+            <!-- 退回订单 -->
+          <view wx:if="{{item.ordercheckallstate==null&&item.orderstate=='KHQX'}}" bindtap="delkhApply" data-orderid="{{item.orderid}}">确认取消</view>
+  <!-- 退回订单 -->
+          <view wx:if="{{item.ordercheckallstate==null&&item.orderstate=='JS'}}" bindtap="delApply" data-orderid="{{item.orderid}}">退回订单</view>
+          <!-- 申请打卡 -->
+          <view wx:if="{{item.ordercheckallstate==null&&item.orderstate=='JS'}}" bindtap="Applyclock" data-orderid="{{item.orderid}}">申请打卡</view>
+          <!-- 订单变更 -->
+          <view wx:if="{{item.ordercheckallstate==null&&item.orderstate=='JS'&&item.orderprojecttype=='AZ'}}" bindtap="ChangesOrder" data-orderid="{{item.orderid}}">订单变更</view>
+
+
+          <view wx:if="{{item.ordercheckallstate==null&&item.orderstate=='JS'}}" bindtap="repairCollect" data-orderid="{{item.orderid}}">维修验收</view>
+          <view wx:if="{{item.ordercheckallstate==null&&item.orderstate=='YSK'}}" bindtap="repairCollect" data-orderid="{{item.orderid}}">维修验收</view>
+          <view wx:if="{{item.orderstate=='QRFK'}}" bindtap="confirmreceipt" data-orderid="{{item.orderid}}">确认收款</view>
+          <view wx:if="{{item.orderstate=='KHYPJ'}}" data-id="{{item.orderid}}" data-orderserviceuserid='{{item.orderserviceuserid}}' bindtap="userEvaluate">评价</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 遮罩层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<!-- 弹出层 -->
+<view class="modalDlg" wx:if="{{showModal}}">
+  <!-- 二维码或其他图片 -->
+ <view class='title'>相关协议 </view>
+ <checkbox-group bindchange="agreeMent" class="info">
+            <checkbox value="true" checked="false"/> 同意遵守树芽读书的<text class="user-agree" catchtap="showAgreement"> 《用户协议》</text>
+        </checkbox-group>
+
+  <view bindtap="ok" class="ok">同意</view>
+</view>

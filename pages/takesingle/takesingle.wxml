@@ -1,0 +1,58 @@
+<!--pages/takesingle/takesingle.wxml-->
+<view class='centents'>
+  <view class='page_row'>
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='20' type='search'></icon>
+        <input class="" bindblur='searchValueInput' placeholder="请输入关键字" value="{{searchValue}}" />
+      </view>
+    </view>
+    <form bindsubmit="suo" report-submit="true">
+      <view class='sousuo'>
+        <button formType="submit" class='buttonss'>
+          搜索
+        </button>
+      </view>
+    </form>
+  </view>
+</view>
+<view class="repairTaskPage">
+  <view class="taskList">
+    <view class="task" wx:for="{{taskList}}" wx:key>
+      <view class="taskTop" bindtap="taskListDetail" data-id="{{item.orderid}}">
+        <view class="taskInfo">
+          <view class="taskLeft">
+            <text>订单编号：</text>
+            <view>{{item.orderid}}</view>
+          </view>
+          <view class="status" wx:if="{{item.orderstate=='YSHG'}}" style="display:{{collectStatus}};color:#ed1b24;">验收合格</view>
+          <view class="status" wx:if="{{item.orderstate=='SQYS'}}" style="display:{{collectStatus}};color:#ed1b24;">申请验收</view>
+          <view class="status" wx:if="{{item.orderstate=='YSBHG'}}" style="display:{{collectStatus}};color:#ed1b24;">验收不合格</view>
+
+          <view class="status" wx:if="{{item.orderstate=='FB'&&item.snatchstate=='N'}}" style="display:{{collectStatus}};color:#ed1b24;">竞标中</view>
+          <view class="status" wx:if="{{item.orderstate=='JS'&&item.snatchstate=='Y'}}" style="display:{{collectStatus}};color:#ed1b24;">中标</view>
+        </view>
+        <view class="taskInfo">
+          <view class="taskLeft" style="color:#747474">
+            <text>项目名称：</text>
+            <view>{{item.orderprojectname}}</view>
+          </view>
+        </view>
+        <view class="taskInfo">
+          <view class="taskLeft" style="color:#747474">
+            <text>发布时间：</text>
+            <view>{{item.ordercreatetime}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="taskBot">
+        <view class="left"></view>
+        <view class="right">
+          <view wx:if="{{item.orderstate=='JS'}}" bindtap="repairCollect" data-orderid="{{item.orderid}}">维修验收</view>
+          <view wx:if="{{item.orderstate=='QRFK'}}" bindtap="confirmreceipt" data-orderid="{{item.orderid}}">确认收款</view>
+          <view wx:if="{{item.orderstate=='KFYPJ'}}" data-orderid="{{item.orderid}}" bindtap="userEvaluate">评价</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

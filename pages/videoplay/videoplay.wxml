@@ -1,0 +1,7 @@
+<!--pages/videoplay/videoplay.wxml-->
+<view class="section tc">
+  <video id="myVideo" src="{{url}}{{sharevideourl}}"
+    bindplay='bindplay' bindpause='bindpause' bindended='bindend' bindtimeupdate="bindtimeupdate" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+</view>
+<!-- 现在的video就下面三个属性 -->
+<video src="" binderror="" hidden></video>

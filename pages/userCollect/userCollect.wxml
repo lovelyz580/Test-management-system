@@ -1,0 +1,139 @@
+<!--pages/userCollect/userCollect.wxml-->
+<view class="confirmOrderPage">
+  <view class="orderInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>订单信息</text>
+    </view>
+    <view class="orderContent">
+      <view class="info">
+        <text>项目名称：</text>
+        <view>{{orderprojectname}}</view>
+      </view>
+      <view class="info">
+        <text>维修地点：</text>
+        <view>{{orderaddress}}</view>
+      </view>
+      <view class="info">
+        <text>联系人：</text>
+        <view>{{ordercontactperson}}</view>
+      </view>
+      <view class="info">
+        <text>联系电话：</text>
+        <view>{{ordercontactphone}}</view>
+      </view>
+      <view class="info">
+        <text>计划维修时间：</text>
+        <view>{{ordercreatetime}}</view>
+      </view>
+      <view class="info">
+        <text>建筑类型：</text>
+        <view>{{buildingtypename}}</view>
+      </view>
+      <view class="info">
+        <text>项目类型：</text>
+        <view wx:if="{{orderprojecttype=='WX'}}">维修</view>
+        <view wx:if="{{orderprojecttype=='AZ'}}">安装</view>
+      </view>
+    </view>
+  </view>
+  <view class="productInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>产品信息</text>
+    </view>
+    <view class="productList">
+      <view class="navList">
+        <text>产品类型</text>
+        <text>清单项目</text>
+        <text>单价</text>
+        <text>维修数量</text>
+        <text>价格</text>
+      </view>
+      <view class="productContent">
+        <view class="list" wx:for="{{orderList}}" wx:key>
+          <text>{{item.goodsname}}</text>
+          <text>{{item.projectname}}</text>
+          <text>{{item.orderdetailintercepttotalmoney/item.orderdetailnumber}}</text>
+          <text>{{item.orderdetailnumber}}</text>
+          <text>{{item.orderdetailintercepttotalmoney}}</text>
+        </view>
+        <view class="allMoney">
+          <view class="allLeft">
+            <text>差旅费：</text>
+            <view>{{ordertraveltotalmoney}}</view>
+          </view>
+          <view class="allRight">
+            <text>合计：</text>
+            <view>{{orderintercepttotalmoney}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- 验收金额 -->
+  <view class='materialInfo'>
+    <view class="orderTitle">
+      <view></view>
+      <text>验收金额</text>
+      <text style='color:red'>(必填项*)</text>
+    </view>
+    <view class="orderContent">
+      <view class="info">
+        <text class='applycheckmoney'> {{customermoney}}   元</text>
+      </view>
+      <view class='info'>
+        <text>备注:{{applycheckremark}}</text>
+      </view>
+      <view class="orderTitle">
+        <view></view>
+        <text>历史验收金额记录</text>
+      </view>
+      <view class="info" wx:for="{{applaylist}}" wx:key>
+        <text>金额：</text>
+        <view>{{item.customermoney}}元</view>
+        <text style='margin-left:10rpx;'>备注：</text>
+        <view>{{item.applycheckremark}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 验收材料 -->
+  <view class="materialInfo">
+    <view class="orderTitle">
+      <view></view>
+      <text>验收材料</text>
+    </view>
+    <view class="content">
+      <image wx:for="{{images}}" wx:key bindtap="previewImage" src="{{url}}{{item}}" data-list="{{images}}" data-list="{{images}}" data-src="{{url}}{{item}}"></image>
+    </view>
+  <!-- 验收不合格 -->
+   <view class="orderTitle">
+      <view></view>
+      <text>验收不合格</text>
+    </view>
+    <view class="content">
+      <textarea placeholder='请填写验收不合格原因' bindinput='belowstandard'></textarea>
+    </view>
+
+
+
+
+
+
+
+    <view class="btnList">
+      <view class="btnLeft"></view>
+      <view class="applyCollect">
+        <form bindsubmit="qualified" report-submit='true'>
+          <button class='hege' form-type='submit'>验收合格</button>
+        </form>
+        <form bindsubmit="noQualified" report-submit='true'>
+          <button class='buhege' form-type='submit'>验收不合格</button>
+        </form>
+      </view>
+    </view>
+  </view>
+</view>

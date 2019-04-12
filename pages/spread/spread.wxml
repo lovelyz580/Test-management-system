@@ -1,0 +1,31 @@
+<!--pages/spread/spread.wxml-->
+
+<view class='Top'>
+  <text class='text'>扫一扫，会有惊喜哦！</text>
+
+  <view class="showModule">
+    <!-- 这部分内容可以灵活修改，例如改成一个模态框 -->
+    <image class='img' bindtap="previewImage" src='{{url}}{{images}}'></image>
+
+  </view>
+
+</view>
+<view class='button'>
+<view class='spreads'>推广成功注册{{sum}}人</view>
+  <view class="productContent">
+    <view class="navList">
+      <text>姓名</text>
+      <text>手机号</text>
+      <text>注册时间</text>
+    </view>
+  </view>
+  <view class="textContent">
+    <scroll-view class='sv' scroll-y='true' style='height:200px;'>
+      <view class="nameList" wx:for='{{userlist}}'>
+        <text>{{item.userrealname}}</text>
+        <text>{{item.userphone}}</text>
+        <text>{{item.usercreatetime}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

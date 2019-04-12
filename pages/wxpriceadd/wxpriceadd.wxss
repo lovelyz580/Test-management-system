@@ -1,0 +1,7 @@
+/* pages/wxpriceadd/wxpriceadd.wxss */
+.title{
+  color: red;
+}
+.title input{
+  border: 1rpx silver solid;
+}

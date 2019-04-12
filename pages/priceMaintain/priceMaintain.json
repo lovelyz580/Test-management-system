@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "单价维护",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+}

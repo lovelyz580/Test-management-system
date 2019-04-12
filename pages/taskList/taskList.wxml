@@ -1,0 +1,46 @@
+<!--pages/taskList/taskList.wxml-->
+<view class="repairTaskPage">
+  <view class="taskList">
+    <view class="task" wx:for="{{taskList}}" wx:key>
+      <view class="taskTop">
+        <view class="taskInfo">
+          <view class="taskLeft">
+            <text>订单编号：</text>
+            <view>{{item.orderNum}}</view>
+          </view>
+          <view class="status" wx:if="{{item.status==0}}" style="color:#ed1b24">等待接单</view>
+          <view class="status" wx:elif="{{item.status==1}}">已完成</view>
+          <view class="status" wx:else="{{item.status==2}}" style="color:#4093f1;">等待验收</view>
+        </view>
+        <view class="taskInfo">
+          <view class="taskLeft" style="color:#747474">
+            <text>项目名称：</text>
+            <view>{{item.projectName}}</view>
+          </view>
+        </view>
+        <view class="taskInfo">
+          <view class="taskLeft"  style="color:#747474">
+            <text>发布时间：</text>
+            <view>{{item.time}}</view>
+          </view>
+        </view>
+        <view class="taskInfo">
+          <view class="taskLeft"  style="color:#747474">
+            <text>总价：</text>
+            <view>{{item.allPrice}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="taskBot">
+        <view class="left"></view>
+        <view class="right">
+          <view wx:if="{{item.status==1}}" bindtap="repairCollect">维修验收</view>
+          <view wx:if="{{item.status==1}}" bindtap="userEvaluate">评价</view>
+          <view wx:if="{{item.status==2}}" style="display:none">维修验收</view>
+          <text>查看</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

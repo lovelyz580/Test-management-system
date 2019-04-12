@@ -1,0 +1,30 @@
+<view class="dashang">
+  <button size="mini" bindtap="wxPay">打赏{{ price }}元</button>
+</view>
+
+
+
+
+
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <input type="text" class="weui-search-bar__input" placeholder="沪A6789" maxlength='10' value="{{inputVal}}" focus="{{inputShowed}}" bindblur="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          </view>
+        </view>
+      </view>
+      <view class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+      <!-- 搜索列表 -->
+      <view class="weui-cell__bd" wx:for="{{searchlist}}" wx:key="key">
+        <!-- 列表名称 -->
+        <view class='list_name' data-index='{{index}}' data-id='{{item.deviceId}}' data-name='{{item}}' bindtap='btn_name'>
+          <!-- 昵称 -->
+          <label class='lab_name'>{{item.kingdeename}}</label>
+        </view>
+      </view>
+    </view>
+  </view>

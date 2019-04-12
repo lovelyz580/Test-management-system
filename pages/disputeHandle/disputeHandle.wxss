@@ -1,0 +1,55 @@
+/* pages/disputeHandle/disputeHandle.wxss */
+page{
+  background:#f5f5f5;
+}
+.disputeHandlePage{
+  width:100%;
+}
+.dispute{
+  width:100%;
+  background:#fff;
+}
+.header{
+  width:100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding:30rpx;
+  border-top:1px solid #f5f5f5;
+  border-bottom:1px solid #f5f5f5;
+}
+.header text{
+  display: block;
+  font-size:30rpx;
+  width:20%;
+}
+.header input{
+  display: block;
+  font-size:30rpx;
+}
+.content{
+  width:100%;
+  display: flex; 
+  box-sizing: border-box;
+  padding:30rpx;
+}
+.content text{
+  display: block;
+  font-size:30rpx;
+  width:20%;
+}
+.content textarea{
+  display: block;
+  font-size:30rpx;
+  line-height:45rpx;
+}
+.submitBtn{
+  display: block;
+  width:95%;
+  margin:0 auto;
+  background:#ed1b24;
+  margin-top:70rpx;
+  color:#fff;
+  outline: none;
+  font-size:30rpx;
+}

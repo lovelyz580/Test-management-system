@@ -1,0 +1,113 @@
+/* pages/spread/spread.wxss */
+
+.text {
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  width: 100%;
+}
+
+.Top {
+  height: 700rpx;
+}
+
+.showModule {
+ display:flex;
+justify-content:center;
+align-items:center;
+position:fixed;
+left:9%;
+top:10%;
+height:680rpx;
+width:650rpx;
+opacity:0.99;
+border-radius:30rpx;
+margin-top:-100rpx;
+margin-left:-35rpx;
+
+}
+
+.showModule image {
+  width: 283px;
+  height: 255px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.listTop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.listTop view {
+  font-size: 30rpx;
+  margin-right: auto;
+}
+
+.listTop text {
+  display: block;
+  font-size: 30rpx;
+  color: #ed1b24;
+}
+
+.button {
+  margin-top: 20rpx;
+  height: 400rpx;
+}
+
+.button text {
+  color: red;
+}
+
+.productContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* padding:40rpx 0 10rpx 0; */
+  border-bottom: 1px solid #ddd;
+}
+
+.navList text {
+  display: block;
+  font-size: 25rpx;
+  width: 30%;
+  text-align: center;
+  color: black;
+}
+.navList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eee;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+}
+
+.nameList{
+ width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(243, 227, 227);
+  box-sizing: border-box;
+  padding: 20rpx 0;
+}
+.nameList text {
+  display: block;
+  font-size: 25rpx;
+  width: 30%;
+  text-align: center;
+  color: black;
+}
+
+.spreads{
+  color:red;
+  text-align: center;
+  margin-right: 50rpx;
+}
